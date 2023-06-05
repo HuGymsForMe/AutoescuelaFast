@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="fotos">
+    <file>logofast.png</file>
+  </qresource>
+</RCC>
