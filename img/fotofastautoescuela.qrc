@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="fotos">
-    <file>logofast.png</file>
+  <qresource prefix="fotoautoescuela">
+    <file>imagen3.jpg</file>
   </qresource>
 </RCC>

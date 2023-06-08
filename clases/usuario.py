@@ -14,5 +14,3 @@ class Usuario:
         if isinstance(other, Usuario):
             return self._nickname == other._nickname
         return False
-
-

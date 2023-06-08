@@ -2,31 +2,34 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox, QMainWindow
 from PyQt5.QtGui import QIcon
 
-from img.imagenautoescuela import *
 from gui.registrarse import Registrarse
 
 from almacen.almacenusuarios import AlmacenUsuarios
 
+import os
+
 class MenuLogin(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setupUi(self)
+        self.ventana_secundaria = None
+        self.login = None
+        self.RUTA_FOTO = os.path.abspath('img/logofast.png')
 
-    def setupUi(self, Login):
+    def setupUi(self):
         #CARGARMOS DATOS
         self.almacen_usuarios = AlmacenUsuarios()
-        self.cargar_ficheros_en_app()
-        Login.setObjectName("Login")
-        Login.resize(1099, 747)
-        Login.setMinimumSize(QtCore.QSize(1099, 747))
-        Login.setMaximumSize(QtCore.QSize(1099, 747))
-        Login.setStyleSheet("")
-        Login.setDocumentMode(False)
-        self.ventana = QtWidgets.QWidget(Login)
+        self.cargar_ficheros_en_app()     
+        self.login.setObjectName("Login")
+        self.login.resize(1099, 747)
+        self.login.setMinimumSize(QtCore.QSize(1099, 747))
+        self.login.setMaximumSize(QtCore.QSize(1099, 747))
+        self.login.setStyleSheet("")
+        self.login.setDocumentMode(False)
+        self.ventana = QtWidgets.QWidget(self.login)
         self.ventana.setObjectName("ventana")
         #FAVICON
         self.favicon = QIcon('img/coche.png')
-        Login.setWindowIcon(self.favicon)
+        self.login.setWindowIcon(self.favicon)
         self.print_nickname = QtWidgets.QLabel(self.ventana)
         self.print_nickname.setGeometry(QtCore.QRect(310, 350, 170, 51))
         font = QtGui.QFont()
@@ -58,7 +61,12 @@ class MenuLogin(QMainWindow):
         self.fondo_negro.setObjectName("fondo_negro")
         self.imagen_coche = QtWidgets.QLabel(self.fondo_negro)
         self.imagen_coche.setGeometry(QtCore.QRect(280, 70, 531, 431))
-        self.imagen_coche.setStyleSheet("image: url(:/login/logofast.png);")
+        imagen_coche = QtGui.QImage(self.RUTA_FOTO)
+        if imagen_coche.isNull():
+            print("Error al cargar la imagen")
+        else:
+            self.imagen_coche.setPixmap(QtGui.QPixmap.fromImage(imagen_coche))
+
         self.imagen_coche.setText("")
         self.imagen_coche.setObjectName("imagen_coche")
         self.boton_iniciar_sesion = QtWidgets.QPushButton(self.fondo_negro)
@@ -99,22 +107,22 @@ class MenuLogin(QMainWindow):
         self.print_password.raise_()
         self.input_nickname.raise_()
         self.input_password.raise_()
-        Login.setCentralWidget(self.ventana)
+        self.login.setCentralWidget(self.ventana)
 
-        self.retranslateUi(Login)
-        QtCore.QMetaObject.connectSlotsByName(Login)
+        self.retranslateUi()
+        QtCore.QMetaObject.connectSlotsByName(self.login)
 
         self.link_registrarse.clicked.connect(self.abrir_registrarse)
         self.boton_iniciar_sesion.clicked.connect(self.comprobar_datos)
 
-    def retranslateUi(self, Login):
+    def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        Login.setWindowTitle(_translate("Login", "AutoescuelaFast"))
-        self.print_nickname.setText(_translate("Login", "Nombre de Usuario"))
-        self.print_password.setText(_translate("Login", "Contraseña"))
-        self.boton_iniciar_sesion.setText(_translate("Login", "INICIAR SESIÓN"))
-        self.print_iniciar_sesion.setText(_translate("Login", "INICIAR SESIÓN"))
-        self.link_registrarse.setText(_translate("Login", "Registrate"))
+        self.login.setWindowTitle(_translate("self.login", "AutoescuelaFast"))
+        self.print_nickname.setText(_translate("self.login", "Nombre de Usuario"))
+        self.print_password.setText(_translate("self.login", "Contraseña"))
+        self.boton_iniciar_sesion.setText(_translate("self.login", "INICIAR SESIÓN"))
+        self.print_iniciar_sesion.setText(_translate("self.login", "INICIAR SESIÓN"))
+        self.link_registrarse.setText(_translate("self.login", "Registrate"))
 
     def cargar_ficheros_en_app(self):
         self.almacen_usuarios.importar_usuarios()
@@ -122,8 +130,8 @@ class MenuLogin(QMainWindow):
     #ENLACE REGISTRASE
     def abrir_registrarse(self):
         self.Form = QtWidgets.QDialog()
-        self.ui = Registrarse(self.Form, self.almacen_usuarios, Login)
-        Login.hide()
+        self.ventana_secundaria = Registrarse(self.Form, self.almacen_usuarios, self.login)
+        self.login.hide()
 
     #BOTÓN INICIAR SESIÓN
     def keyPressEvent(self, event):
@@ -137,14 +145,27 @@ class MenuLogin(QMainWindow):
 
     def comprobar_datos(self):
         nickname_var, password_var = self.recoger_campos_boton_iniciar_sesion()
-        if self.almacen_usuarios.login_existencia_usuario(nickname_var, password_var):
+        if self.almacen_usuarios.self.login_existencia_usuario(nickname_var, password_var):
             acceder_menu_principal = QMessageBox.warning(None, "Bien", "Accedes al menú principal") #MI MENÚ
         else:
             campos_obligatorios = QMessageBox.warning(None, "Error", "Contraseña o nombre incorrectos")
 
+    def volver_al_menu(self):
+        self.login.show()
+        self.ventana_secundaria = None
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    Login = MenuLogin()
-    Login.show()
+    ventana_principal = MenuLogin()  # Crear una instancia de la clase MenuLogin
+    ventana_principal.login = ventana_principal  # Asignar la instancia a self.login
+    ventana_principal.setupUi()  # Llamar a setupUi() después de asignar self.login
+    ventana_principal.show()
     sys.exit(app.exec_())
+
+
+
+
+
+
+

@@ -56,3 +56,8 @@ class AlmacenUsuarios:
             self._usuarios.append(nuevo_usuario)
             return True
         return False
+
+    def sobreescribir_ficheros(self):
+        with open(os.path.join(self.RUTA_FICHEROS, 'usuarios.csv'), 'w', encoding='UTF-8') as fichero_usuarios:
+            for usuario in self._usuarios:
+                fichero_usuarios.write(f"{str(usuario)}\n")

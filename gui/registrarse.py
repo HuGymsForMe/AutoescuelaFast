@@ -1,16 +1,19 @@
 from PyQt5.QtCore import QTimer
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox, QDialog
+
 import datetime
+import os
 
 from clases.validator import Validator
 
-class Registrarse(QtWidgets.QWidget):
+class Registrarse(QtWidgets.QDialog):
     def __init__(self, form, almacen_usuarios, parent=None):
         super().__init__(parent)
         self.almacen_usuarios = almacen_usuarios
         self.validador = Validator()
         self.form = form
+        self.RUTA_FOTO = os.path.abspath('./img/logofast.png')
         self.setupUi()
 
     def setupUi(self):
@@ -73,6 +76,7 @@ class Registrarse(QtWidgets.QWidget):
         self.input_nickname = QtWidgets.QLineEdit(self.form)
         self.input_nickname.setGeometry(QtCore.QRect(130, 230, 291, 41))
         self.input_nickname.setObjectName("input_nickname")
+        self.input_nickname.setStyleSheet("font-size: 16px;")
         self.input_password = QtWidgets.QLineEdit(self.form)
         self.input_password.setGeometry(QtCore.QRect(130, 330, 291, 41))
         self.input_password.setEchoMode(QtWidgets.QLineEdit.Password)
@@ -80,6 +84,7 @@ class Registrarse(QtWidgets.QWidget):
         self.input_gmail = QtWidgets.QLineEdit(self.form)
         self.input_gmail.setGeometry(QtCore.QRect(470, 230, 291, 41))
         self.input_gmail.setObjectName("input_gmail")
+        self.input_gmail.setStyleSheet("font-size: 16px;")
         self.input_confirm_password = QtWidgets.QLineEdit(self.form)
         self.input_confirm_password.setGeometry(QtCore.QRect(130, 440, 291, 41))
         self.input_confirm_password.setEchoMode(QtWidgets.QLineEdit.Password)
@@ -87,7 +92,14 @@ class Registrarse(QtWidgets.QWidget):
         self.input_nombre = QtWidgets.QLineEdit(self.form)
         self.input_nombre.setGeometry(QtCore.QRect(470, 330, 291, 41))
         self.input_nombre.setObjectName("input_nombre")
+        self.input_nombre.setStyleSheet("font-size: 16px;")
         self.foto_coche = QtWidgets.QLabel(self.form)
+        self.foto_coche.setGeometry(QtCore.QRect(280, 70, 531, 431))
+        imagen_coche = QtGui.QImage(self.RUTA_FOTO)
+        if imagen_coche.isNull():
+            print("Error al cargar la imagen")
+        else:
+            self.foto_coche.setPixmap(QtGui.QPixmap.fromImage(imagen_coche))
         self.foto_coche.setGeometry(QtCore.QRect(70, 450, 491, 351))
         self.foto_coche.setStyleSheet("image: url(:/fotos/logofast.png);")
         self.foto_coche.setText("")
@@ -140,6 +152,7 @@ class Registrarse(QtWidgets.QWidget):
         self.input_apellidos = QtWidgets.QLineEdit(self.form)
         self.input_apellidos.setGeometry(QtCore.QRect(470, 440, 291, 41))
         self.input_apellidos.setObjectName("input_apellidos")
+        self.input_apellidos.setStyleSheet("font-size: 16px;")
         self.frame = QtWidgets.QFrame(self.form)
         self.frame.setGeometry(QtCore.QRect(-11, -21, 1181, 811))
         self.frame.setStyleSheet("\n"
@@ -207,10 +220,10 @@ class Registrarse(QtWidgets.QWidget):
         if event.key() == QtCore.Qt.Key_Enter or event.key() == QtCore.Qt.Key_Return:
             self.boton_registrarse.clicked.emit()
     
-    def closeEvent(self, event):
+    '''def closeEvent(self, event):
         event.accept()
-        self.volver_al_menu()
-
+        self.volver_al_menu()'''
+        
     def actualizar_fecha(self):
         fecha_actual = datetime.datetime.now().strftime("%H:%M:%S")
         self.print_fecha_actual.setText(fecha_actual)
@@ -237,13 +250,14 @@ class Registrarse(QtWidgets.QWidget):
         else:
             if self.almacen_usuarios.add_usuario(nickname_var, password_var, gmail_var, name_var, apellidos_var):
                 adicion_correcta = QMessageBox.information(None, "Usuario Añadido", "Usuario añadido con éxito")
+                self.almacen_usuarios.sobreescribir_ficheros()
                 self.volver_al_menu()
             else:
                 adicion_correcta = QMessageBox.information(None, "Usuario Incorrecto", "El usuario ya está añadido")
 
     def volver_al_menu(self):
         self.form.hide()
-        self.parent().setVisible(True)
+        self.parent().show()
         #nickname_var, password_var = self.recoger_campos_boton_iniciar_sesion()
         #if not(self.validador.validar_password(password_var)):
 
