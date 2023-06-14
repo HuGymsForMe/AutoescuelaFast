@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QMessageBox, QMainWindow
 from PyQt5.QtGui import QIcon
 
 from gui.registrarse import Registrarse
+from gui.ventana_user import VentanaUser
 
 from almacen.almacenusuarios import AlmacenUsuarios
 
@@ -11,7 +12,8 @@ import os
 class MenuLogin(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ventana_secundaria = None
+        self.ventana_registro = None
+        self.ventana_menu_user = None
         self.login = None
         self.RUTA_FOTO = os.path.abspath('img/logofast.png')
 
@@ -66,9 +68,6 @@ class MenuLogin(QMainWindow):
             print("Error al cargar la imagen")
         else:
             self.imagen_coche.setPixmap(QtGui.QPixmap.fromImage(imagen_coche))
-
-        self.imagen_coche.setText("")
-        self.imagen_coche.setObjectName("imagen_coche")
         self.boton_iniciar_sesion = QtWidgets.QPushButton(self.fondo_negro)
         self.boton_iniciar_sesion.setGeometry(QtCore.QRect(630, 630, 141, 41))
         self.boton_iniciar_sesion.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
@@ -129,10 +128,9 @@ class MenuLogin(QMainWindow):
 
     #ENLACE REGISTRASE
     def abrir_registrarse(self):
-        self.Form = QtWidgets.QDialog()
-        self.ventana_secundaria = Registrarse(self.Form, self.almacen_usuarios, self.login)
         self.login.hide()
-
+        self.ventana_registro = Registrarse(self.almacen_usuarios, self.login)
+        
     #BOTÓN INICIAR SESIÓN
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_Enter or event.key() == QtCore.Qt.Key_Return:
@@ -145,27 +143,17 @@ class MenuLogin(QMainWindow):
 
     def comprobar_datos(self):
         nickname_var, password_var = self.recoger_campos_boton_iniciar_sesion()
-        if self.almacen_usuarios.self.login_existencia_usuario(nickname_var, password_var):
-            acceder_menu_principal = QMessageBox.warning(None, "Bien", "Accedes al menú principal") #MI MENÚ
+        if self.almacen_usuarios.login_existencia_usuario(nickname_var, password_var):
+            self.login.hide()
+            self.ventana_menu_user = VentanaUser(self.almacen_usuarios, nickname_var, self.login)
         else:
             campos_obligatorios = QMessageBox.warning(None, "Error", "Contraseña o nombre incorrectos")
-
-    def volver_al_menu(self):
-        self.login.show()
-        self.ventana_secundaria = None
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    ventana_principal = MenuLogin()  # Crear una instancia de la clase MenuLogin
-    ventana_principal.login = ventana_principal  # Asignar la instancia a self.login
-    ventana_principal.setupUi()  # Llamar a setupUi() después de asignar self.login
+    ventana_principal = MenuLogin()
+    ventana_principal.login = ventana_principal
+    ventana_principal.setupUi()
     ventana_principal.show()
     sys.exit(app.exec_())
-
-
-
-
-
-
-

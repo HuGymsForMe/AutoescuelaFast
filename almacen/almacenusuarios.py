@@ -4,7 +4,6 @@ import datetime
 from clases.usuario import Usuario
 
 class AlmacenUsuarios:
-
     class CamposFicheroUsuario:
         NICKNAME = 0
         PASSWORD = 1
@@ -12,11 +11,6 @@ class AlmacenUsuarios:
         NOMBRE = 3
         APELLIDOS = 4
         FECHA_INGRESO = 5
-
-        @staticmethod
-        def opciones():
-            return range(Agenda.CamposFicheroCsv.NICKNAME,
-                        Agenda.CamposFicheroCsv.FECHA_INGRESO+1)
 
     def __init__(self):
         self._usuarios = []

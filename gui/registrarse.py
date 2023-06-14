@@ -1,28 +1,32 @@
 from PyQt5.QtCore import QTimer
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox, QDialog
+from PyQt5.QtWidgets import QMessageBox, QMainWindow
+from PyQt5.QtGui import QIcon, QCloseEvent
+
 
 import datetime
 import os
 
 from clases.validator import Validator
 
-class Registrarse(QtWidgets.QDialog):
-    def __init__(self, form, almacen_usuarios, parent=None):
-        super().__init__(parent)
+class Registrarse(QMainWindow):
+    def __init__(self, almacen_usuarios, ventana_login):
+        super().__init__()
         self.almacen_usuarios = almacen_usuarios
         self.validador = Validator()
-        self.form = form
+        self.ventana_login = ventana_login
         self.RUTA_FOTO = os.path.abspath('./img/logofast.png')
         self.setupUi()
 
     def setupUi(self):
-        self.form.setObjectName("self.form")
-        self.form.resize(1102, 752)
-        self.form.setMinimumSize(QtCore.QSize(1102, 752))
-        self.form.setMaximumSize(QtCore.QSize(1102, 752))
-        self.print_password = QtWidgets.QLabel(self.form)
+        self.setObjectName("self")
+        self.resize(1102, 752)
+        self.setMinimumSize(QtCore.QSize(1102, 752))
+        self.setMaximumSize(QtCore.QSize(1102, 752))
+        self.print_password = QtWidgets.QLabel(self)
         self.print_password.setGeometry(QtCore.QRect(130, 280, 181, 51))
+        self.favicon = QIcon('./img/coche.png')
+        self.setWindowIcon(self.favicon)
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
         font.setPointSize(12)
@@ -34,7 +38,7 @@ class Registrarse(QtWidgets.QDialog):
 "font: 12pt \"MS Shell Dlg 2\";")
         self.print_password.setText(str(QtCore.Qt.AutoText))
         self.print_password.setObjectName("print_password")
-        self.print_confirm_password = QtWidgets.QLabel(self.form)
+        self.print_confirm_password = QtWidgets.QLabel(self)
         self.print_confirm_password.setGeometry(QtCore.QRect(130, 390, 251, 51))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
@@ -47,7 +51,7 @@ class Registrarse(QtWidgets.QDialog):
 "font: 12pt \"MS Shell Dlg 2\";")
         self.print_confirm_password.setText(str(QtCore.Qt.AutoText))
         self.print_confirm_password.setObjectName("print_confirm_password")
-        self.print_name = QtWidgets.QLabel(self.form)
+        self.print_name = QtWidgets.QLabel(self)
         self.print_name.setGeometry(QtCore.QRect(470, 280, 81, 51))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
@@ -60,7 +64,7 @@ class Registrarse(QtWidgets.QDialog):
 "font: 12pt \"MS Shell Dlg 2\";")
         self.print_name.setText(str(QtCore.Qt.AutoText))
         self.print_name.setObjectName("print_name")
-        self.print_apellidos = QtWidgets.QLabel(self.form)
+        self.print_apellidos = QtWidgets.QLabel(self)
         self.print_apellidos.setGeometry(QtCore.QRect(470, 390, 111, 51))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
@@ -73,38 +77,34 @@ class Registrarse(QtWidgets.QDialog):
 "font: 12pt \"MS Shell Dlg 2\";")
         self.print_apellidos.setText(str(QtCore.Qt.AutoText))
         self.print_apellidos.setObjectName("print_apellidos")
-        self.input_nickname = QtWidgets.QLineEdit(self.form)
+        self.input_nickname = QtWidgets.QLineEdit(self)
         self.input_nickname.setGeometry(QtCore.QRect(130, 230, 291, 41))
         self.input_nickname.setObjectName("input_nickname")
         self.input_nickname.setStyleSheet("font-size: 16px;")
-        self.input_password = QtWidgets.QLineEdit(self.form)
+        self.input_password = QtWidgets.QLineEdit(self)
         self.input_password.setGeometry(QtCore.QRect(130, 330, 291, 41))
         self.input_password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.input_password.setObjectName("input_password")
-        self.input_gmail = QtWidgets.QLineEdit(self.form)
+        self.input_gmail = QtWidgets.QLineEdit(self)
         self.input_gmail.setGeometry(QtCore.QRect(470, 230, 291, 41))
         self.input_gmail.setObjectName("input_gmail")
         self.input_gmail.setStyleSheet("font-size: 16px;")
-        self.input_confirm_password = QtWidgets.QLineEdit(self.form)
+        self.input_confirm_password = QtWidgets.QLineEdit(self)
         self.input_confirm_password.setGeometry(QtCore.QRect(130, 440, 291, 41))
         self.input_confirm_password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.input_confirm_password.setObjectName("input_confirm_password")
-        self.input_nombre = QtWidgets.QLineEdit(self.form)
+        self.input_nombre = QtWidgets.QLineEdit(self)
         self.input_nombre.setGeometry(QtCore.QRect(470, 330, 291, 41))
         self.input_nombre.setObjectName("input_nombre")
         self.input_nombre.setStyleSheet("font-size: 16px;")
-        self.foto_coche = QtWidgets.QLabel(self.form)
-        self.foto_coche.setGeometry(QtCore.QRect(280, 70, 531, 431))
+        self.foto_coche = QtWidgets.QLabel(self)
         imagen_coche = QtGui.QImage(self.RUTA_FOTO)
         if imagen_coche.isNull():
             print("Error al cargar la imagen")
         else:
             self.foto_coche.setPixmap(QtGui.QPixmap.fromImage(imagen_coche))
         self.foto_coche.setGeometry(QtCore.QRect(70, 450, 491, 351))
-        self.foto_coche.setStyleSheet("image: url(:/fotos/logofast.png);")
-        self.foto_coche.setText("")
-        self.foto_coche.setObjectName("foto_coche")
-        self.print_fecha_actual = QtWidgets.QLabel(self.form)
+        self.print_fecha_actual = QtWidgets.QLabel(self)
         self.print_fecha_actual.setGeometry(QtCore.QRect(890, 10, 171, 61))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
@@ -117,7 +117,7 @@ class Registrarse(QtWidgets.QDialog):
 "font: 12pt \"MS Shell Dlg 2\";")
         self.print_fecha_actual.setText(str(QtCore.Qt.AutoText))
         self.print_fecha_actual.setObjectName("print_fecha_actual")
-        self.print_nickname = QtWidgets.QLabel(self.form)
+        self.print_nickname = QtWidgets.QLabel(self)
         self.print_nickname.setGeometry(QtCore.QRect(130, 170, 250, 51))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
@@ -130,13 +130,13 @@ class Registrarse(QtWidgets.QDialog):
 "font: 12pt \"MS Shell Dlg 2\";")
         self.print_nickname.setText(str(QtCore.Qt.AutoText))
         self.print_nickname.setObjectName("print_nickname")
-        self.boton_registrarse = QtWidgets.QPushButton(self.form)
+        self.boton_registrarse = QtWidgets.QPushButton(self)
         self.boton_registrarse.setGeometry(QtCore.QRect(780, 600, 231, 71))
         self.boton_registrarse.setStyleSheet("background-color: #09B5CB;\n"
 "color: #FFFFFF;")
         self.boton_registrarse.setObjectName("boton_registrarse")
         self.boton_registrarse.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.print_correo_electronico = QtWidgets.QLabel(self.form)
+        self.print_correo_electronico = QtWidgets.QLabel(self)
         self.print_correo_electronico.setGeometry(QtCore.QRect(470, 170, 251, 51))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
@@ -149,11 +149,11 @@ class Registrarse(QtWidgets.QDialog):
 "font: 12pt \"MS Shell Dlg 2\";")
         self.print_correo_electronico.setText(str(QtCore.Qt.AutoText))
         self.print_correo_electronico.setObjectName("print_correo_electronico")
-        self.input_apellidos = QtWidgets.QLineEdit(self.form)
+        self.input_apellidos = QtWidgets.QLineEdit(self)
         self.input_apellidos.setGeometry(QtCore.QRect(470, 440, 291, 41))
         self.input_apellidos.setObjectName("input_apellidos")
         self.input_apellidos.setStyleSheet("font-size: 16px;")
-        self.frame = QtWidgets.QFrame(self.form)
+        self.frame = QtWidgets.QFrame(self)
         self.frame.setGeometry(QtCore.QRect(-11, -21, 1181, 811))
         self.frame.setStyleSheet("\n"
 "background-color: rgb(56, 56, 56);")
@@ -193,26 +193,26 @@ class Registrarse(QtWidgets.QDialog):
         self.input_apellidos.raise_()
 
         self.retranslateUi()
-        QtCore.QMetaObject.connectSlotsByName(self.form)
-        self.form.move(500, 120)
-        self.form.show()
+        QtCore.QMetaObject.connectSlotsByName(self)
+        self.move(500, 120)
+        self.show()
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.form.setWindowTitle(_translate("self.form", "Registrarse"))
-        self.print_password.setText(_translate("self.form", "Contraseña"))
-        self.print_confirm_password.setText(_translate("self.form", "Confirmar Contraseña"))
-        self.print_name.setText(_translate("self.form", "Nombre"))
-        self.print_apellidos.setText(_translate("self.form", "Apellidos"))
+        self.setWindowTitle(_translate("self", "Registrarse"))
+        self.print_password.setText(_translate("self", "Contraseña"))
+        self.print_confirm_password.setText(_translate("self", "Confirmar Contraseña"))
+        self.print_name.setText(_translate("self", "Nombre"))
+        self.print_apellidos.setText(_translate("self", "Apellidos"))
         fecha_actual = datetime.datetime.now().strftime("%H:%M:%S")
         self.timer = QTimer()
         self.timer.timeout.connect(self.actualizar_fecha)
         self.timer.start(1000) 
-        self.print_fecha_actual.setText(_translate("self.form", fecha_actual))
-        self.print_nickname.setText(_translate("self.form", "Nombre de Usuario"))
-        self.boton_registrarse.setText(_translate("self.form", "REGISTRARSE"))
-        self.print_correo_electronico.setText(_translate("self.form", "Correo Electrónico"))
-        self.print_registrarse.setText(_translate("self.form", "REGISTRARSE"))
+        self.print_fecha_actual.setText(_translate("self", fecha_actual))
+        self.print_nickname.setText(_translate("self", "Nombre de Usuario"))
+        self.boton_registrarse.setText(_translate("self", "REGISTRARSE"))
+        self.print_correo_electronico.setText(_translate("self", "Correo Electrónico"))
+        self.print_registrarse.setText(_translate("self", "REGISTRARSE"))
 
         self.boton_registrarse.clicked.connect(self.comprobar_registro)
     
@@ -255,13 +255,14 @@ class Registrarse(QtWidgets.QDialog):
             else:
                 adicion_correcta = QMessageBox.information(None, "Usuario Incorrecto", "El usuario ya está añadido")
 
-    def volver_al_menu(self):
-        self.form.hide()
-        self.parent().show()
-        #nickname_var, password_var = self.recoger_campos_boton_iniciar_sesion()
-        #if not(self.validador.validar_password(password_var)):
-
-
+    @QtCore.pyqtSlot(QtGui.QCloseEvent)
+    def closeEvent(self, event):
+        self.cerrar_ventana_hija()
+    
+    def cerrar_ventana_hija(self):
+        self.close()
+        self.ventana_login.show()
+    
 
 
 
