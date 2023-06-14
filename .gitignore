@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 
 imports.txt
+/gui/ventanauser/test_de_examen/test.ui

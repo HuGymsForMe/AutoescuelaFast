@@ -10,9 +10,10 @@ import os
 import datetime
 
 class VentanaUser(QMainWindow):
-    def __init__(self, almacen_usuarios, nickname_var, ventana_login):
+    def __init__(self, almacen_usuarios, almacen_partidas, nickname_var, ventana_login):
         super().__init__()
         self.almacen_usuarios = almacen_usuarios
+        self.almacen_partidas = almacen_partidas
         self.nickname_var = nickname_var
         self.ventana_login = ventana_login
         self.ventana_acerca_de = None
@@ -131,7 +132,7 @@ class VentanaUser(QMainWindow):
 
     def abrir_ventana_realizar_test(self):
         self.hide()
-        self.ventana_realizar_test = RealizarTest(self)
+        self.ventana_realizar_test = RealizarTest(self, self.almacen_partidas, self.nickname_var)
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):

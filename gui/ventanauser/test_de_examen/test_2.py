@@ -3,46 +3,49 @@ from PyQt5.QtWidgets import QMainWindow, QMessageBox, QStackedLayout, QVBoxLayou
 from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QIcon
 
+#HASTA PREGUNTA --> 7
+
 from almacen.almacenpreguntas import AlmacenPreguntas
 
 import os
 
-class Test1(QMainWindow):
+class Test2(QMainWindow):
     class NumeroPregunta:
-        PREGUNTA_1 = 0
-        PREGUNTA_2 = 1
-        PREGUNTA_3 = 2
-        PREGUNTA_4 = 3
-        PREGUNTA_5 = 4
-        PREGUNTA_6 = 5
-        PREGUNTA_7 = 6
-        PREGUNTA_8 = 7
-        PREGUNTA_9 = 8
-        PREGUNTA_10 = 9
-        PREGUNTA_11 = 10
-        PREGUNTA_12 = 11
-        PREGUNTA_13 = 12
-        PREGUNTA_14 = 13
-        PREGUNTA_15 = 14
-        PREGUNTA_16 = 15
-        PREGUNTA_17 = 16
-        PREGUNTA_18 = 17
-        PREGUNTA_19 = 18
-        PREGUNTA_20 = 19
-        PREGUNTA_21 = 20
-        PREGUNTA_22 = 21
-        PREGUNTA_23 = 22
-        PREGUNTA_24 = 23
-        PREGUNTA_25 = 24
-        PREGUNTA_26 = 25
-        PREGUNTA_27 = 26
-        PREGUNTA_28 = 27
-        PREGUNTA_29 = 28
-        PREGUNTA_30 = 29
+        PREGUNTA_1 = 30
+        PREGUNTA_2 = 31
+        PREGUNTA_3 = 32
+        PREGUNTA_4 = 33
+        PREGUNTA_5 = 34
+        PREGUNTA_6 = 35
+        PREGUNTA_7 = 36
+        PREGUNTA_8 = 37
+        PREGUNTA_9 = 38
+        PREGUNTA_10 = 39
+        PREGUNTA_11 = 40
+        PREGUNTA_12 = 41
+        PREGUNTA_13 = 42
+        PREGUNTA_14 = 43
+        PREGUNTA_15 = 44
+        PREGUNTA_16 = 45
+        PREGUNTA_17 = 46
+        PREGUNTA_18 = 47
+        PREGUNTA_19 = 48
+        PREGUNTA_20 = 49
+        PREGUNTA_21 = 50
+        PREGUNTA_22 = 51
+        PREGUNTA_23 = 52
+        PREGUNTA_24 = 53
+        PREGUNTA_25 = 54
+        PREGUNTA_26 = 55
+        PREGUNTA_27 = 56
+        PREGUNTA_28 = 57
+        PREGUNTA_29 = 58
+        PREGUNTA_30 = 59
 
-    def __init__(self, ventana_realizar_test):
+    def __init__(self, ventana_realizar_test, almacen_partidas):
         super().__init__()
         self.ventana_realizar_test = ventana_realizar_test
+        self.almacen_partidas = almacen_partidas
         self.RUTA_FOTO = os.path.abspath('../autoescuelafast/gui/imgtest')
 
         #CRONOMETRO
@@ -746,7 +749,7 @@ class Test1(QMainWindow):
         self.foto_1.setGeometry(QtCore.QRect(-10, 80, 331, 271))
         self.foto_1.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_1.setObjectName("foto_1")
-        imagen_1 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen1.png'))
+        imagen_1 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen31.jpg'))
         if imagen_1.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1082,7 +1085,7 @@ class Test1(QMainWindow):
         self.foto_3.setGeometry(QtCore.QRect(-10, 80, 331, 271))
         self.foto_3.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_3.setObjectName("foto_3")
-        imagen_3 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen3.jpg'))
+        imagen_3 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen33.jpg'))
         if imagen_3.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1110,7 +1113,7 @@ class Test1(QMainWindow):
         self.foto_4.setGeometry(QtCore.QRect(-10, 80, 331, 271))
         self.foto_4.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_4.setObjectName("foto_4")
-        imagen_4 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen4.jpg'))
+        imagen_4 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen34.gif'))
         if imagen_4.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1138,7 +1141,7 @@ class Test1(QMainWindow):
         self.foto_6.setGeometry(QtCore.QRect(-10, 80, 331, 271))
         self.foto_6.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_6.setObjectName("foto_6")
-        imagen_6 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen6.jpg'))
+        imagen_6 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen36.gif'))
         if imagen_6.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1166,7 +1169,7 @@ class Test1(QMainWindow):
         self.foto_7.setGeometry(QtCore.QRect(-10, 80, 331, 271))
         self.foto_7.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_7.setObjectName("foto_7")
-        imagen_7 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen7.jpg'))
+        imagen_7 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen37.jpg'))
         if imagen_7.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1530,7 +1533,7 @@ class Test1(QMainWindow):
         self.foto_5.setGeometry(QtCore.QRect(-10, 80, 331, 271))
         self.foto_5.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_5.setObjectName("foto_5")
-        imagen_5 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen5.png'))
+        imagen_5 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen35.jpg'))
         if imagen_5.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1558,7 +1561,7 @@ class Test1(QMainWindow):
         self.foto_2.setGeometry(QtCore.QRect(-10, 80, 331, 271))
         self.foto_2.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_2.setObjectName("foto_2")
-        imagen_2 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen2.jpg'))
+        imagen_2 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen32.jpg'))
         if imagen_2.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1970,53 +1973,52 @@ class Test1(QMainWindow):
         self.print_cronometro.setText(f"{self.time_str}")
         if self.time_str == "30:00":
             tiempo_limite = QMessageBox.information(None, "Tiempo Límite", "Te quedaste sin tiempo, lo siento...")
-            self.close()
-            self.ventana_realizar_test.show()
+            self.cerrar_ventana_hija()
             
     def devolver_respuesta_1(self):
-        self.opcion_1_1.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_1_1.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_1_2.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_1_3.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_1_3.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_1_1.setEnabled(False)
         self.opcion_1_2.setEnabled(False)
         self.opcion_1_3.setEnabled(False)
-        if self.opcion_1_1.isChecked():
+        if self.opcion_1_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_001.setStyleSheet("background-color: rgb(138, 255, 156);")
-        elif self.opcion_1_2.isChecked() or self.opcion_1_3.isChecked():
+        elif self.opcion_1_1.isChecked() or self.opcion_1_2.isChecked():
             self.boton_001.setStyleSheet("background-color: rgb(255, 76, 76);")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_2(self):
         self.opcion_2_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_2_2.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_2_3.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_2_2.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_2_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_2_1.setEnabled(False)
         self.opcion_2_2.setEnabled(False)
         self.opcion_2_3.setEnabled(False)
-        if self.opcion_2_3.isChecked():
+        if self.opcion_2_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_002.setStyleSheet("background-color: rgb(138, 255, 156);")
-        elif self.opcion_2_1.isChecked() or self.opcion_2_2.isChecked():
+        elif self.opcion_2_1.isChecked() or self.opcion_2_3.isChecked():
             self.boton_002.setStyleSheet("background-color: rgb(255, 76, 76);")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_3(self):
-        self.opcion_3_1.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_3_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_3_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_3_2.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_3_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_3_1.setEnabled(False)
         self.opcion_3_2.setEnabled(False)
         self.opcion_3_3.setEnabled(False)
-        if self.opcion_3_1.isChecked():
+        if self.opcion_3_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_003.setStyleSheet("background-color: rgb(138, 255, 156);")
-        elif self.opcion_3_2.isChecked() or self.opcion_3_3.isChecked():
+        elif self.opcion_3_1.isChecked() or self.opcion_3_3.isChecked():
             self.boton_003.setStyleSheet("background-color: rgb(255, 76, 76);")
             self.no_contestadas -= 1
             self.falladas += 1
@@ -2070,17 +2072,17 @@ class Test1(QMainWindow):
             self.falladas += 1
 
     def devolver_respuesta_7(self):
-        self.opcion_7_1.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_7_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_7_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_7_2.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_7_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_7_1.setEnabled(False)
         self.opcion_7_2.setEnabled(False)
         self.opcion_7_3.setEnabled(False)
-        if self.opcion_7_1.isChecked():
+        if self.opcion_7_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_007.setStyleSheet("background-color: rgb(138, 255, 156);")
-        elif self.opcion_7_2.isChecked() or self.opcion_7_3.isChecked():
+        elif self.opcion_7_1.isChecked() or self.opcion_7_3.isChecked():
             self.boton_007.setStyleSheet("background-color: rgb(255, 76, 76);")
             self.no_contestadas -= 1
             self.falladas += 1

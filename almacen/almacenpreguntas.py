@@ -1,6 +1,7 @@
 import os
 
 from clases.preguntas import Pregunta
+
 class AlmacenPreguntas:
     class CamposFicheroPreguntas:
         ENUNCIADO = 0

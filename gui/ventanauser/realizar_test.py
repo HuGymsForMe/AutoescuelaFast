@@ -2,12 +2,15 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtGui import QIcon
 
-from gui.ventanauser.primertest.test_1 import Test1
+from gui.ventanauser.test_de_examen.test_1 import Test1
+from gui.ventanauser.test_de_examen.test_2 import Test2
 
 class RealizarTest(QMainWindow):
-    def __init__(self, ventana_user):
+    def __init__(self, ventana_user, almacen_partidas, nickname_var):
         super().__init__()
         self.ventana_user = ventana_user
+        self.almacen_partidas = almacen_partidas
+        self.nickname_var = nickname_var
         self.setupUi()
 
     def setupUi(self):
@@ -171,6 +174,8 @@ class RealizarTest(QMainWindow):
 
         #EVENTOS BOTONES TEST
         self.boton_test_1.clicked.connect(self.abrir_test_1)
+        self.boton_test_2.clicked.connect(self.abrir_test_2)
+
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
@@ -193,7 +198,11 @@ class RealizarTest(QMainWindow):
 
     def abrir_test_1(self):
         self.hide()
-        self.ventana_test_1 = Test1(self)
+        self.ventana_test_1 = Test1(self, self.almacen_partidas, self.nickname_var)
+
+    def abrir_test_2(self):
+        self.hide()
+        self.ventana_test_2 = Test2(self, self.almacen_partidas)
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):

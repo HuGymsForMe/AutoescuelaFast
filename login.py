@@ -6,6 +6,7 @@ from gui.registrarse import Registrarse
 from gui.ventana_user import VentanaUser
 
 from almacen.almacenusuarios import AlmacenUsuarios
+from almacen.almacenpartidas import AlmacenPartidas
 
 import os
 
@@ -20,7 +21,9 @@ class MenuLogin(QMainWindow):
     def setupUi(self):
         #CARGARMOS DATOS
         self.almacen_usuarios = AlmacenUsuarios()
-        self.cargar_ficheros_en_app()     
+        self.almacen_partidas = AlmacenPartidas()
+        self.cargar_ficheros_en_app()   
+
         self.login.setObjectName("Login")
         self.login.resize(1099, 747)
         self.login.setMinimumSize(QtCore.QSize(1099, 747))
@@ -125,6 +128,7 @@ class MenuLogin(QMainWindow):
 
     def cargar_ficheros_en_app(self):
         self.almacen_usuarios.importar_usuarios()
+        self.almacen_partidas.importar_partidas()
 
     #ENLACE REGISTRASE
     def abrir_registrarse(self):
@@ -145,7 +149,7 @@ class MenuLogin(QMainWindow):
         nickname_var, password_var = self.recoger_campos_boton_iniciar_sesion()
         if self.almacen_usuarios.login_existencia_usuario(nickname_var, password_var):
             self.login.hide()
-            self.ventana_menu_user = VentanaUser(self.almacen_usuarios, nickname_var, self.login)
+            self.ventana_menu_user = VentanaUser(self.almacen_usuarios, self.almacen_partidas, nickname_var, self.login)
         else:
             campos_obligatorios = QMessageBox.warning(None, "Error", "Contraseña o nombre incorrectos")
 
