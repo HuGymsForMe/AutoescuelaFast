@@ -1984,9 +1984,9 @@ class Test1(QMainWindow):
         if self.opcion_1_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_001.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_001.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_1_2.isChecked() or self.opcion_1_3.isChecked():
-            self.boton_001.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_001.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2000,9 +2000,9 @@ class Test1(QMainWindow):
         if self.opcion_2_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_002.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_002.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_2_1.isChecked() or self.opcion_2_2.isChecked():
-            self.boton_002.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_002.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2016,9 +2016,9 @@ class Test1(QMainWindow):
         if self.opcion_3_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_003.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_003.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_3_2.isChecked() or self.opcion_3_3.isChecked():
-            self.boton_003.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_003.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2032,9 +2032,9 @@ class Test1(QMainWindow):
         if self.opcion_4_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_004.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_004.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_4_1.isChecked() or self.opcion_4_3.isChecked():
-            self.boton_004.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_004.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2048,9 +2048,9 @@ class Test1(QMainWindow):
         if self.opcion_5_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_005.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_005.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_5_2.isChecked() or self.opcion_5_3.isChecked():
-            self.boton_005.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_005.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
     
@@ -2064,9 +2064,9 @@ class Test1(QMainWindow):
         if self.opcion_6_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_006.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_006.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_6_1.isChecked() or self.opcion_6_3.isChecked():
-            self.boton_006.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_006.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2080,9 +2080,9 @@ class Test1(QMainWindow):
         if self.opcion_7_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_007.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_007.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_7_2.isChecked() or self.opcion_7_3.isChecked():
-            self.boton_007.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_007.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2096,9 +2096,9 @@ class Test1(QMainWindow):
         if self.opcion_8_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_008.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_008.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_8_2.isChecked() or self.opcion_8_3.isChecked():
-            self.boton_008.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_008.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2112,9 +2112,9 @@ class Test1(QMainWindow):
         if self.opcion_9_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_009.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_009.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_9_2.isChecked() or self.opcion_9_3.isChecked():
-            self.boton_009.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_009.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2128,9 +2128,9 @@ class Test1(QMainWindow):
         if self.opcion_10_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_010.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_010.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_10_1.isChecked() or self.opcion_10_3.isChecked():
-            self.boton_010.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_010.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2144,9 +2144,9 @@ class Test1(QMainWindow):
         if self.opcion_11_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_011.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_011.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_11_1.isChecked() or self.opcion_11_2.isChecked():
-            self.boton_011.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_011.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2160,9 +2160,9 @@ class Test1(QMainWindow):
         if self.opcion_12_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_012.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_012.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_12_1.isChecked() or self.opcion_12_2.isChecked():
-            self.boton_012.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_012.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2176,9 +2176,9 @@ class Test1(QMainWindow):
         if self.opcion_13_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_013.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_013.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_13_1.isChecked() or self.opcion_13_3.isChecked():
-            self.boton_013.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_013.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2192,9 +2192,9 @@ class Test1(QMainWindow):
         if self.opcion_14_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_014.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_014.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_14_2.isChecked() or self.opcion_14_3.isChecked():
-            self.boton_014.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_014.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2208,9 +2208,9 @@ class Test1(QMainWindow):
         if self.opcion_15_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_015.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_015.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_15_1.isChecked() or self.opcion_15_2.isChecked():
-            self.boton_015.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_015.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2224,9 +2224,9 @@ class Test1(QMainWindow):
         if self.opcion_16_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_016.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_016.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_16_2.isChecked() or self.opcion_16_1.isChecked():
-            self.boton_016.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_016.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2240,9 +2240,9 @@ class Test1(QMainWindow):
         if self.opcion_17_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_017.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_017.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_17_1.isChecked() or self.opcion_17_3.isChecked():
-            self.boton_017.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_017.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2256,9 +2256,9 @@ class Test1(QMainWindow):
         if self.opcion_18_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_018.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_018.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_18_1.isChecked() or self.opcion_18_3.isChecked():
-            self.boton_018.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_018.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2272,9 +2272,9 @@ class Test1(QMainWindow):
         if self.opcion_19_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_019.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_019.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_19_1.isChecked() or self.opcion_19_2.isChecked():
-            self.boton_019.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_019.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2288,9 +2288,9 @@ class Test1(QMainWindow):
         if self.opcion_20_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_020.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_020.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_20_2.isChecked() or self.opcion_20_3.isChecked():
-            self.boton_020.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_020.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
     
@@ -2304,9 +2304,9 @@ class Test1(QMainWindow):
         if self.opcion_21_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_021.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_021.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_21_2.isChecked() or self.opcion_21_3.isChecked():
-            self.boton_021.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_021.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2320,9 +2320,9 @@ class Test1(QMainWindow):
         if self.opcion_22_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_022.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_022.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_22_1.isChecked() or self.opcion_22_3.isChecked():
-            self.boton_022.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_022.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2336,9 +2336,9 @@ class Test1(QMainWindow):
         if self.opcion_23_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_023.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_023.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_23_1.isChecked() or self.opcion_23_3.isChecked():
-            self.boton_023.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_023.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2352,9 +2352,9 @@ class Test1(QMainWindow):
         if self.opcion_24_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_024.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_024.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_24_2.isChecked() or self.opcion_24_3.isChecked():
-            self.boton_024.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_024.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2368,9 +2368,9 @@ class Test1(QMainWindow):
         if self.opcion_25_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_025.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_025.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_25_1.isChecked() or self.opcion_25_3.isChecked():
-            self.boton_025.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_025.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2384,9 +2384,9 @@ class Test1(QMainWindow):
         if self.opcion_26_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_026.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_026.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_26_1.isChecked() or self.opcion_26_2.isChecked():
-            self.boton_026.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_026.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2400,9 +2400,9 @@ class Test1(QMainWindow):
         if self.opcion_27_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_027.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_027.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_27_1.isChecked() or self.opcion_27_2.isChecked():
-            self.boton_027.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_027.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2416,9 +2416,9 @@ class Test1(QMainWindow):
         if self.opcion_28_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_028.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_028.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_28_1.isChecked() or self.opcion_28_2.isChecked():
-            self.boton_028.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_028.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2432,9 +2432,9 @@ class Test1(QMainWindow):
         if self.opcion_29_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_029.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_029.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_29_1.isChecked() or self.opcion_29_3.isChecked():
-            self.boton_029.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_029.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
@@ -2448,9 +2448,9 @@ class Test1(QMainWindow):
         if self.opcion_30_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
-            self.boton_030.setStyleSheet("background-color: rgb(138, 255, 156);")
+            self.boton_030.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_30_1.isChecked() or self.opcion_30_2.isChecked():
-            self.boton_030.setStyleSheet("background-color: rgb(255, 76, 76);")
+            self.boton_030.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
