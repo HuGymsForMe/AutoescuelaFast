@@ -7,38 +7,38 @@ from almacen.almacenpreguntas import AlmacenPreguntas
 
 import os
 
-class Test2(QMainWindow):
+class Test6(QMainWindow):
     class NumeroPregunta:
-        PREGUNTA_1 = 30
-        PREGUNTA_2 = 31
-        PREGUNTA_3 = 32
-        PREGUNTA_4 = 33
-        PREGUNTA_5 = 34
-        PREGUNTA_6 = 35
-        PREGUNTA_7 = 36
-        PREGUNTA_8 = 37
-        PREGUNTA_9 = 38
-        PREGUNTA_10 = 39
-        PREGUNTA_11 = 40
-        PREGUNTA_12 = 41
-        PREGUNTA_13 = 42
-        PREGUNTA_14 = 43
-        PREGUNTA_15 = 44
-        PREGUNTA_16 = 45
-        PREGUNTA_17 = 46
-        PREGUNTA_18 = 47
-        PREGUNTA_19 = 48
-        PREGUNTA_20 = 49
-        PREGUNTA_21 = 50
-        PREGUNTA_22 = 51
-        PREGUNTA_23 = 52
-        PREGUNTA_24 = 53
-        PREGUNTA_25 = 54
-        PREGUNTA_26 = 55
-        PREGUNTA_27 = 56
-        PREGUNTA_28 = 57
-        PREGUNTA_29 = 58
-        PREGUNTA_30 = 59
+        PREGUNTA_1 = 150
+        PREGUNTA_2 = 151
+        PREGUNTA_3 = 152
+        PREGUNTA_4 = 153
+        PREGUNTA_5 = 154
+        PREGUNTA_6 = 155
+        PREGUNTA_7 = 156
+        PREGUNTA_8 = 157
+        PREGUNTA_9 = 158
+        PREGUNTA_10 = 159
+        PREGUNTA_11 = 160
+        PREGUNTA_12 = 161
+        PREGUNTA_13 = 162
+        PREGUNTA_14 = 163
+        PREGUNTA_15 = 164
+        PREGUNTA_16 = 165
+        PREGUNTA_17 = 166
+        PREGUNTA_18 = 167
+        PREGUNTA_19 = 168
+        PREGUNTA_20 = 169
+        PREGUNTA_21 = 170
+        PREGUNTA_22 = 171
+        PREGUNTA_23 = 172
+        PREGUNTA_24 = 173
+        PREGUNTA_25 = 174
+        PREGUNTA_26 = 175
+        PREGUNTA_27 = 176
+        PREGUNTA_28 = 177
+        PREGUNTA_29 = 178
+        PREGUNTA_30 = 179
 
     def __init__(self, ventana_realizar_test, almacen_partidas, nickname_var):
         super().__init__()
@@ -748,7 +748,7 @@ class Test2(QMainWindow):
         self.foto_1.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_1.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_1.setObjectName("foto_1")
-        imagen_1 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen31.jpg'))
+        imagen_1 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen151.jpg'))
         if imagen_1.isNull():
             print("Error al cargar la imagen")
         else:
@@ -776,7 +776,7 @@ class Test2(QMainWindow):
         self.foto_20.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_20.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_20.setObjectName("foto_20")
-        imagen_20 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen50.jpg'))
+        imagen_20 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen170.jpg'))
         if imagen_20.isNull():
             print("Error al cargar la imagen")
         else:
@@ -804,7 +804,7 @@ class Test2(QMainWindow):
         self.foto_21.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_21.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_21.setObjectName("foto_21")
-        imagen_21 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen51.jpg'))
+        imagen_21 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen171.jpg'))
         if imagen_21.isNull():
             print("Error al cargar la imagen")
         else:
@@ -832,7 +832,7 @@ class Test2(QMainWindow):
         self.foto_22.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_22.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_22.setObjectName("foto_22")
-        imagen_22 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen52.jpg'))
+        imagen_22 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen172.jpg'))
         if imagen_22.isNull():
             print("Error al cargar la imagen")
         else:
@@ -860,7 +860,7 @@ class Test2(QMainWindow):
         self.foto_23.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_23.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_23.setObjectName("foto_23")
-        imagen_23 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen53.jpg'))
+        imagen_23 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen173.jpg'))
         if imagen_23.isNull():
             print("Error al cargar la imagen")
         else:
@@ -888,7 +888,7 @@ class Test2(QMainWindow):
         self.foto_24.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_24.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_24.setObjectName("foto_24")
-        imagen_24 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen54.jpg'))
+        imagen_24 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen174.jpg'))
         if imagen_24.isNull():
             print("Error al cargar la imagen")
         else:
@@ -916,7 +916,7 @@ class Test2(QMainWindow):
         self.foto_25.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_25.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_25.setObjectName("foto_25")
-        imagen_25 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen55.jpg'))
+        imagen_25 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen175.jpg'))
         if imagen_25.isNull():
             print("Error al cargar la imagen")
         else:
@@ -944,7 +944,7 @@ class Test2(QMainWindow):
         self.foto_26.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_26.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_26.setObjectName("foto_26")
-        imagen_26 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen56.jpg'))
+        imagen_26 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen176.jpg'))
         if imagen_26.isNull():
             print("Error al cargar la imagen")
         else:
@@ -972,7 +972,7 @@ class Test2(QMainWindow):
         self.foto_27.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_27.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_27.setObjectName("foto_27")
-        imagen_27 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen57.jpg'))
+        imagen_27 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen177.jpg'))
         if imagen_27.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1000,7 +1000,7 @@ class Test2(QMainWindow):
         self.foto_28.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_28.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_28.setObjectName("foto_28")
-        imagen_28 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen58.jpg'))
+        imagen_28 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen178.jpg'))
         if imagen_28.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1028,7 +1028,7 @@ class Test2(QMainWindow):
         self.foto_29.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_29.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_29.setObjectName("foto_29")
-        imagen_29 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen59.jpg'))
+        imagen_29 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen179.jpg'))
         if imagen_29.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1056,7 +1056,7 @@ class Test2(QMainWindow):
         self.foto_30.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_30.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_30.setObjectName("foto_30")
-        imagen_30 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen60.jpg'))
+        imagen_30 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen180.jpg'))
         if imagen_30.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1084,7 +1084,7 @@ class Test2(QMainWindow):
         self.foto_3.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_3.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_3.setObjectName("foto_3")
-        imagen_3 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen33.jpg'))
+        imagen_3 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen153.jpg'))
         if imagen_3.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1112,7 +1112,7 @@ class Test2(QMainWindow):
         self.foto_4.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_4.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_4.setObjectName("foto_4")
-        imagen_4 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen34.jpg'))
+        imagen_4 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen154.jpg'))
         if imagen_4.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1140,7 +1140,7 @@ class Test2(QMainWindow):
         self.foto_6.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_6.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_6.setObjectName("foto_6")
-        imagen_6 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen36.jpg'))
+        imagen_6 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen156.jpg'))
         if imagen_6.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1168,7 +1168,7 @@ class Test2(QMainWindow):
         self.foto_7.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_7.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_7.setObjectName("foto_7")
-        imagen_7 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen37.jpg'))
+        imagen_7 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen157.jpg'))
         if imagen_7.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1196,7 +1196,7 @@ class Test2(QMainWindow):
         self.foto_8.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_8.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_8.setObjectName("foto_8")
-        imagen_8 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen38.jpg'))
+        imagen_8 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen158.jpg'))
         if imagen_8.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1224,7 +1224,7 @@ class Test2(QMainWindow):
         self.foto_9.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_9.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_9.setObjectName("foto_9")
-        imagen_9 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen39.jpg'))
+        imagen_9 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen159.jpg'))
         if imagen_9.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1252,7 +1252,7 @@ class Test2(QMainWindow):
         self.foto_10.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_10.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_10.setObjectName("foto_10")
-        imagen_10 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen40.jpg'))
+        imagen_10 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen160.jpg'))
         if imagen_10.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1280,7 +1280,7 @@ class Test2(QMainWindow):
         self.foto_11.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_11.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_11.setObjectName("foto_11")
-        imagen_11 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen41.png'))
+        imagen_11 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen161.jpg'))
         if imagen_11.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1308,7 +1308,7 @@ class Test2(QMainWindow):
         self.foto_12.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_12.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_12.setObjectName("foto_12")
-        imagen_12 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen42.png'))
+        imagen_12 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen162.jpg'))
         if imagen_12.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1336,7 +1336,7 @@ class Test2(QMainWindow):
         self.foto_13.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_13.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_13.setObjectName("foto_13")
-        imagen_13 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen43.jpg'))
+        imagen_13 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen163.jpg'))
         if imagen_13.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1364,7 +1364,7 @@ class Test2(QMainWindow):
         self.foto_17.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_17.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_17.setObjectName("foto_17")
-        imagen_17 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen47.jpg'))
+        imagen_17 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen167.jpg'))
         if imagen_17.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1392,7 +1392,7 @@ class Test2(QMainWindow):
         self.foto_18.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_18.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_18.setObjectName("foto_18")
-        imagen_18 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen48.jpg'))
+        imagen_18 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen168.jpg'))
         if imagen_18.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1420,7 +1420,7 @@ class Test2(QMainWindow):
         self.foto_19.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_19.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_19.setObjectName("foto_19")
-        imagen_19 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen49.jpg'))
+        imagen_19 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen169.jpg'))
         if imagen_19.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1448,7 +1448,7 @@ class Test2(QMainWindow):
         self.foto_14.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_14.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_14.setObjectName("foto_14")
-        imagen_14 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen44.jpg'))
+        imagen_14 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen164.jpg'))
         if imagen_14.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1476,7 +1476,7 @@ class Test2(QMainWindow):
         self.foto_15.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_15.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_15.setObjectName("foto_15")
-        imagen_15 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen45.jpg'))
+        imagen_15 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen165.jpg'))
         if imagen_15.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1504,7 +1504,7 @@ class Test2(QMainWindow):
         self.foto_16.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_16.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_16.setObjectName("foto_16")
-        imagen_16 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen46.jpg'))
+        imagen_16 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen166.jpg'))
         if imagen_16.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1532,7 +1532,7 @@ class Test2(QMainWindow):
         self.foto_5.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_5.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_5.setObjectName("foto_5")
-        imagen_5 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen35.jpg'))
+        imagen_5 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen155.jpg'))
         if imagen_5.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1560,7 +1560,7 @@ class Test2(QMainWindow):
         self.foto_2.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_2.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_2.setObjectName("foto_2")
-        imagen_2 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen32.jpg'))
+        imagen_2 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen152.jpg'))
         if imagen_2.isNull():
             print("Error al cargar la imagen")
         else:
@@ -1589,7 +1589,7 @@ class Test2(QMainWindow):
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("self", "TEST 2"))
+        self.setWindowTitle(_translate("self", "TEST 6"))
         self.boton_014.setText(_translate("self", "14"))
         self.boton_021.setText(_translate("self", "21"))
         self.boton_018.setText(_translate("self", "18"))
@@ -1994,16 +1994,16 @@ class Test2(QMainWindow):
 
     def devolver_respuesta_2(self):
         self.opcion_2_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_2_2.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_2_3.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_2_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_2_3.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_2_1.setEnabled(False)
         self.opcion_2_2.setEnabled(False)
         self.opcion_2_3.setEnabled(False)
-        if self.opcion_2_2.isChecked():
+        if self.opcion_2_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_002.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_2_1.isChecked() or self.opcion_2_3.isChecked():
+        elif self.opcion_2_1.isChecked() or self.opcion_2_2.isChecked():
             self.boton_002.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
@@ -2026,32 +2026,32 @@ class Test2(QMainWindow):
 
     def devolver_respuesta_4(self):
         self.opcion_4_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_4_2.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_4_3.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_4_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_4_3.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_4_1.setEnabled(False)
         self.opcion_4_2.setEnabled(False)
         self.opcion_4_3.setEnabled(False)
-        if self.opcion_4_2.isChecked():
+        if self.opcion_4_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_004.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_4_1.isChecked() or self.opcion_4_3.isChecked():
+        elif self.opcion_4_1.isChecked() or self.opcion_4_2.isChecked():
             self.boton_004.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_5(self):
-        self.opcion_5_1.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_5_1.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_5_2.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_5_3.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_5_3.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_5_1.setEnabled(False)
         self.opcion_5_2.setEnabled(False)
         self.opcion_5_3.setEnabled(False)
-        if self.opcion_5_1.isChecked():
+        if self.opcion_5_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_005.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_5_2.isChecked() or self.opcion_5_3.isChecked():
+        elif self.opcion_5_1.isChecked() or self.opcion_5_2.isChecked():
             self.boton_005.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
@@ -2074,55 +2074,55 @@ class Test2(QMainWindow):
 
     def devolver_respuesta_7(self):
         self.opcion_7_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_7_2.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_7_3.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_7_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_7_3.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_7_1.setEnabled(False)
         self.opcion_7_2.setEnabled(False)
         self.opcion_7_3.setEnabled(False)
-        if self.opcion_7_2.isChecked():
+        if self.opcion_7_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_007.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_7_1.isChecked() or self.opcion_7_3.isChecked():
+        elif self.opcion_7_1.isChecked() or self.opcion_7_2.isChecked():
             self.boton_007.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_8(self):
         self.opcion_8_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_8_2.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_8_3.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_8_2.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_8_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_8_1.setEnabled(False)
         self.opcion_8_2.setEnabled(False)
         self.opcion_8_3.setEnabled(False)
-        if self.opcion_8_3.isChecked():
+        if self.opcion_8_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_008.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_8_1.isChecked() or self.opcion_8_2.isChecked():
+        elif self.opcion_8_1.isChecked() or self.opcion_8_3.isChecked():
             self.boton_008.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_9(self):
         self.opcion_9_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_9_2.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_9_3.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_9_2.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_9_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_9_1.setEnabled(False)
         self.opcion_9_2.setEnabled(False)
         self.opcion_9_3.setEnabled(False)
-        if self.opcion_9_3.isChecked():
+        if self.opcion_9_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_009.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_9_1.isChecked() or self.opcion_9_2.isChecked():
+        elif self.opcion_9_1.isChecked() or self.opcion_9_3.isChecked():
             self.boton_009.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_10(self):
-        self.opcion_10_1.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_10_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_10_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_10_2.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_10_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_10_1.setEnabled(False)
         self.opcion_10_2.setEnabled(False)
@@ -2153,33 +2153,33 @@ class Test2(QMainWindow):
             self.falladas += 1
 
     def devolver_respuesta_12(self):
-        self.opcion_12_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_12_1.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_12_2.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_12_3.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_12_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_12_1.setEnabled(False)
         self.opcion_12_2.setEnabled(False)
         self.opcion_12_3.setEnabled(False)
-        if self.opcion_12_3.isChecked():
+        if self.opcion_12_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_012.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_12_1.isChecked() or self.opcion_12_2.isChecked():
+        elif self.opcion_12_2.isChecked() or self.opcion_12_3.isChecked():
             self.boton_012.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_13(self):
         self.opcion_13_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_13_2.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_13_3.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_13_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_13_3.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_13_1.setEnabled(False)
         self.opcion_13_2.setEnabled(False)
         self.opcion_13_3.setEnabled(False)
-        if self.opcion_13_2.isChecked():
+        if self.opcion_13_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_013.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_13_1.isChecked() or self.opcion_13_3.isChecked():
+        elif self.opcion_13_1.isChecked() or self.opcion_13_2.isChecked():
             self.boton_013.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
@@ -2217,17 +2217,17 @@ class Test2(QMainWindow):
             self.falladas += 1
 
     def devolver_respuesta_16(self):
-        self.opcion_16_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_16_1.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_16_2.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_16_3.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_16_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_16_1.setEnabled(False)
         self.opcion_16_2.setEnabled(False)
         self.opcion_16_3.setEnabled(False)
-        if self.opcion_16_3.isChecked():
+        if self.opcion_16_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_016.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_16_2.isChecked() or self.opcion_16_1.isChecked():
+        elif self.opcion_16_2.isChecked() or self.opcion_16_3.isChecked():
             self.boton_016.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
@@ -2287,91 +2287,91 @@ class Test2(QMainWindow):
         self.opcion_20_1.setEnabled(False)
         self.opcion_20_2.setEnabled(False)
         self.opcion_20_3.setEnabled(False)
-        if self.opcion_20_3.isChecked():
+        if self.opcion_20_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_020.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_20_1.isChecked() or self.opcion_20_2.isChecked():
+        elif self.opcion_20_2.isChecked() or self.opcion_20_3.isChecked():
             self.boton_020.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
     
     def devolver_respuesta_21(self):
-        self.opcion_21_1.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_21_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_21_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_21_2.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_21_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_21_1.setEnabled(False)
         self.opcion_21_2.setEnabled(False)
         self.opcion_21_3.setEnabled(False)
-        if self.opcion_21_1.isChecked():
+        if self.opcion_21_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_021.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_21_2.isChecked() or self.opcion_21_3.isChecked():
+        elif self.opcion_21_1.isChecked() or self.opcion_21_3.isChecked():
             self.boton_021.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_22(self):
-        self.opcion_22_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_22_2.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_22_1.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_22_2.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_22_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_22_1.setEnabled(False)
         self.opcion_22_2.setEnabled(False)
         self.opcion_22_3.setEnabled(False)
-        if self.opcion_22_2.isChecked():
+        if self.opcion_22_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_022.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_22_1.isChecked() or self.opcion_22_3.isChecked():
+        elif self.opcion_22_2.isChecked() or self.opcion_22_3.isChecked():
             self.boton_022.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_23(self):
-        self.opcion_23_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_23_1.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_23_2.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_23_3.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_23_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_23_1.setEnabled(False)
         self.opcion_23_2.setEnabled(False)
         self.opcion_23_3.setEnabled(False)
-        if self.opcion_23_3.isChecked():
+        if self.opcion_23_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_023.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_23_1.isChecked() or self.opcion_23_2.isChecked():
+        elif self.opcion_23_2.isChecked() or self.opcion_23_3.isChecked():
             self.boton_023.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_24(self):
-        self.opcion_24_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_24_2.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_24_1.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_24_2.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_24_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_24_1.setEnabled(False)
         self.opcion_24_2.setEnabled(False)
         self.opcion_24_3.setEnabled(False)
-        if self.opcion_24_2.isChecked():
+        if self.opcion_24_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_024.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_24_1.isChecked() or self.opcion_24_3.isChecked():
+        elif self.opcion_24_2.isChecked() or self.opcion_24_3.isChecked():
             self.boton_024.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_25(self):
-        self.opcion_25_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_25_1.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_25_2.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_25_3.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_25_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_25_1.setEnabled(False)
         self.opcion_25_2.setEnabled(False)
         self.opcion_25_3.setEnabled(False)
-        if self.opcion_25_3.isChecked():
+        if self.opcion_25_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_025.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_25_1.isChecked() or self.opcion_25_2.isChecked():
+        elif self.opcion_25_2.isChecked() or self.opcion_25_3.isChecked():
             self.boton_025.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
@@ -2393,33 +2393,33 @@ class Test2(QMainWindow):
             self.falladas += 1
 
     def devolver_respuesta_27(self):
-        self.opcion_27_1.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_27_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_27_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_27_2.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_27_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_27_1.setEnabled(False)
         self.opcion_27_2.setEnabled(False)
         self.opcion_27_3.setEnabled(False)
-        if self.opcion_27_1.isChecked():
+        if self.opcion_27_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_027.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_27_2.isChecked() or self.opcion_27_3.isChecked():
+        elif self.opcion_27_1.isChecked() or self.opcion_27_3.isChecked():
             self.boton_027.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
 
     def devolver_respuesta_28(self):
-        self.opcion_28_1.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_28_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_28_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_28_2.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_28_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_28_1.setEnabled(False)
         self.opcion_28_2.setEnabled(False)
         self.opcion_28_3.setEnabled(False)
-        if self.opcion_28_1.isChecked():
+        if self.opcion_28_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_028.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_28_2.isChecked() or self.opcion_28_3.isChecked():
+        elif self.opcion_28_1.isChecked() or self.opcion_28_3.isChecked():
             self.boton_028.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
@@ -2442,16 +2442,16 @@ class Test2(QMainWindow):
 
     def devolver_respuesta_30(self):
         self.opcion_30_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_30_2.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_30_3.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_30_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_30_3.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_30_1.setEnabled(False)
         self.opcion_30_2.setEnabled(False)
         self.opcion_30_3.setEnabled(False)
-        if self.opcion_30_2.isChecked():
+        if self.opcion_30_3.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_030.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_30_1.isChecked() or self.opcion_30_3.isChecked():
+        elif self.opcion_30_1.isChecked() or self.opcion_30_2.isChecked():
             self.boton_030.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
@@ -2470,13 +2470,3 @@ class Test2(QMainWindow):
     def cerrar_ventana_hija(self):
         self.close()
         self.ventana_realizar_test.show()
-
-
-
-
-
-
-    
-
-        
-        

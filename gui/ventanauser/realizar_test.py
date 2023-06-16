@@ -4,6 +4,11 @@ from PyQt5.QtGui import QIcon
 
 from gui.ventanauser.test_de_examen.test_1 import Test1
 from gui.ventanauser.test_de_examen.test_2 import Test2
+from gui.ventanauser.test_de_examen.test_3 import Test3
+from gui.ventanauser.test_de_examen.test_4 import Test4
+from gui.ventanauser.test_de_examen.test_5 import Test5
+from gui.ventanauser.test_de_examen.test_6 import Test6
+from gui.ventanauser.test_de_examen.test_7 import Test7
 
 class RealizarTest(QMainWindow):
     def __init__(self, ventana_user, almacen_partidas, nickname_var):
@@ -175,7 +180,11 @@ class RealizarTest(QMainWindow):
         #EVENTOS BOTONES TEST
         self.boton_test_1.clicked.connect(self.abrir_test_1)
         self.boton_test_2.clicked.connect(self.abrir_test_2)
-
+        self.boton_test_3.clicked.connect(self.abrir_test_3)
+        self.boton_test_4.clicked.connect(self.abrir_test_4)
+        self.boton_test_5.clicked.connect(self.abrir_test_5) 
+        self.boton_test_6.clicked.connect(self.abrir_test_6)
+        self.boton_test_7.clicked.connect(self.abrir_test_7)
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
@@ -202,7 +211,27 @@ class RealizarTest(QMainWindow):
 
     def abrir_test_2(self):
         self.hide()
-        self.ventana_test_2 = Test2(self, self.almacen_partidas)
+        self.ventana_test_2 = Test2(self, self.almacen_partidas, self.nickname_var)
+
+    def abrir_test_3(self):
+        self.hide()
+        self.ventana_test_3 = Test3(self, self.almacen_partidas, self.nickname_var)
+
+    def abrir_test_4(self):
+        self.hide()
+        self.ventana_test_4 = Test4(self, self.almacen_partidas, self.nickname_var)
+
+    def abrir_test_5(self):
+        self.hide()
+        self.ventana_test_5 = Test5(self, self.almacen_partidas, self.nickname_var)
+
+    def abrir_test_6(self):
+        self.hide()
+        self.ventana_test_6 = Test6(self, self.almacen_partidas, self.nickname_var)
+
+    def abrir_test_7(self):
+        self.hide()
+        self.ventana_test_7 = Test7(self, self.almacen_partidas, self.nickname_var)
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):
