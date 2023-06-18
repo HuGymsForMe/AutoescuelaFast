@@ -9,6 +9,9 @@ from gui.ventanauser.test_de_examen.test_4 import Test4
 from gui.ventanauser.test_de_examen.test_5 import Test5
 from gui.ventanauser.test_de_examen.test_6 import Test6
 from gui.ventanauser.test_de_examen.test_7 import Test7
+from gui.ventanauser.test_de_examen.test_8 import Test8
+from gui.ventanauser.test_de_examen.test_9 import Test9
+from gui.ventanauser.test_de_examen.test_10 import Test10
 
 class RealizarTest(QMainWindow):
     def __init__(self, ventana_user, almacen_partidas, nickname_var):
@@ -185,6 +188,9 @@ class RealizarTest(QMainWindow):
         self.boton_test_5.clicked.connect(self.abrir_test_5) 
         self.boton_test_6.clicked.connect(self.abrir_test_6)
         self.boton_test_7.clicked.connect(self.abrir_test_7)
+        self.boton_test_8.clicked.connect(self.abrir_test_8)
+        self.boton_test_9.clicked.connect(self.abrir_test_9)
+        self.boton_test_10.clicked.connect(self.abrir_test_10)
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
@@ -232,6 +238,18 @@ class RealizarTest(QMainWindow):
     def abrir_test_7(self):
         self.hide()
         self.ventana_test_7 = Test7(self, self.almacen_partidas, self.nickname_var)
+
+    def abrir_test_8(self):
+        self.hide()
+        self.ventana_test_8 = Test8(self, self.almacen_partidas, self.nickname_var)
+
+    def abrir_test_9(self):
+        self.hide()
+        self.ventana_test_9 = Test9(self, self.almacen_partidas, self.nickname_var)
+
+    def abrir_test_10(self):
+        self.hide()
+        self.ventana_test_10 = Test10(self, self.almacen_partidas, self.nickname_var)
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):

@@ -1990,8 +1990,6 @@ class Test4(QMainWindow):
             self.no_contestadas -= 1
             self.falladas += 1
 
-        "QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n"
-
     def devolver_respuesta_2(self):
         self.opcion_2_1.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_2_2.setStyleSheet("color: rgb(138, 255, 156);")
