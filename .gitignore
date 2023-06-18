@@ -161,3 +161,7 @@ cython_debug/
 
 imports.txt
 /gui/ventanauser/test_de_examen/test.ui
+/gui/ventanauser/mi_perfil.ui
+pantalla_carga.ui
+hola.py
+pantalla_carga.exe

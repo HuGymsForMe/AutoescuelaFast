@@ -1,5 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMainWindow, QMessageBox, QStackedLayout, QVBoxLayout
+from PyQt5.QtWidgets import QMainWindow, QMessageBox
 from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QIcon
 
@@ -1971,7 +1971,7 @@ class Test7(QMainWindow):
         self.time_str = f"{self.minutes:02d}:{self.seconds:02d}"
         self.print_cronometro.setText(f"{self.time_str}")
         if self.time_str == "30:00":
-            tiempo_limite = QMessageBox.information(None, "Tiempo Límite", "Te quedaste sin tiempo, lo siento...")
+            tiempo_limite = QMessageBox.information(self, "Tiempo Límite", "Te quedaste sin tiempo, lo siento...")
             self.cerrar_ventana_hija()
             
     def devolver_respuesta_1(self):
@@ -2457,13 +2457,28 @@ class Test7(QMainWindow):
     def mostrar_resultados(self):
         if self.no_contestadas == 0:
             if self.acertadas >= 27:
-                resumen_test = QMessageBox.information(None, "Resultados", f"APTO\nACERTADAS: {self.acertadas}\nFALLADAS: {self.falladas}\nTIEMPO: {self.time_str}")
+                resumen_test = QMessageBox.information(self, "Resultados", f"APTO\nACERTADAS: {self.acertadas}\nFALLADAS: {self.falladas}\nTIEMPO: {self.time_str}")
             else:
-                resumen_test = QMessageBox.information(None, "Resultados", f"NO APTO\nACERTADAS: {self.acertadas}\nFALLADAS: {self.falladas}\nTIEMPO: {self.time_str}")
+                resumen_test = QMessageBox.information(self, "Resultados", f"NO APTO\nACERTADAS: {self.acertadas}\nFALLADAS: {self.falladas}\nTIEMPO: {self.time_str}")
             self.cerrar_ventana_hija()
             self.almacen_partidas.add_partida(self.nickname_var, self.acertadas, self.falladas, self.time_str)
         else:
-            no_contestadas = QMessageBox.warning(None, "Fallo", "Te quedan preguntas sin contestar")
+            no_contestadas = QMessageBox.warning(self, "Fallo", "Te quedan preguntas sin contestar")
+
+    @QtCore.pyqtSlot(QtGui.QCloseEvent)
+    def closeEvent(self, event):
+        cerrar_antes_de_tiempo = QMessageBox.question(
+            self,
+            "Cerrar Test",
+            "¿Estás seguro de que quieres cerrar la aplicación?\n    No se guardarán tus resultados actuales",
+            QMessageBox.Yes | QMessageBox.No,
+            QMessageBox.No
+        )
+        if cerrar_antes_de_tiempo == QMessageBox.Yes:
+            self.cerrar_ventana_hija()
+        else:
+            event.ignore()
+
 
     def cerrar_ventana_hija(self):
         self.close()

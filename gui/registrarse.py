@@ -242,18 +242,20 @@ class Registrarse(QMainWindow):
         nickname_var, password_var, confirm_password_var, gmail_var, name_var, apellidos_var = self.recoger_datos_registro()
         if (nickname_var == '' or password_var == '' or confirm_password_var == '' 
         or gmail_var == '' or name_var == '' or apellidos_var == ''):
-            campos_obligatorios = QMessageBox.warning(None, "Error", "Debes rellenar todos los campos")
+            campos_obligatorios = QMessageBox.warning(self, "Error", "Debes rellenar todos los campos")
+        elif len(nickname_var) > 20 or len(nickname_var) < 6:
+            max_caracteres = QMessageBox.warning(self, "Nombre de usuario incorrecto", "El nombre de usuario debe de tener entre 6 y 20 caracteres")
         elif self.validador.validar_contrasenia(password_var) or self.validador.validar_contrasenia(confirm_password_var):
-            advertencia = QMessageBox.warning(None, "Contraseña incorrecta", "La cadena tiene que contener al menos \n  8 dígitos tanto letras como dígitos")
+            advertencia = QMessageBox.warning(self, "Contraseña incorrecta", "La cadena tiene que contener al menos \n  8 dígitos tanto letras como dígitos")
         elif password_var != confirm_password_var:
-            password_desigual = QMessageBox.warning(None, "Error", "No coinciden las contraseñas")
+            password_desigual = QMessageBox.warning(self, "Error", "No coinciden las contraseñas")
         else:
             if self.almacen_usuarios.add_usuario(nickname_var, password_var, gmail_var, name_var, apellidos_var):
-                adicion_correcta = QMessageBox.information(None, "Usuario Añadido", "Usuario añadido con éxito")
+                adicion_correcta = QMessageBox.information(self, "Usuario Añadido", "Usuario añadido con éxito")
                 self.almacen_usuarios.sobreescribir_ficheros()
                 self.volver_al_menu()
             else:
-                adicion_correcta = QMessageBox.information(None, "Usuario Incorrecto", "El usuario ya está añadido")
+                adicion_correcta = QMessageBox.information(self, "Usuario Incorrecto", "El usuario ya está añadido")
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):

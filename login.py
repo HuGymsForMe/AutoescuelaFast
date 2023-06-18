@@ -15,26 +15,26 @@ class MenuLogin(QMainWindow):
         super().__init__()
         self.ventana_registro = None
         self.ventana_menu_user = None
-        self.login = None
         self.RUTA_FOTO = os.path.abspath('img/logofast.png')
+        self.setupUi()
 
     def setupUi(self):
         #CARGARMOS DATOS
         self.almacen_usuarios = AlmacenUsuarios()
         self.almacen_partidas = AlmacenPartidas()
-        self.cargar_ficheros_en_app()   
+        self.cargar_ficheros_en_app()
 
-        self.login.setObjectName("Login")
-        self.login.resize(1099, 747)
-        self.login.setMinimumSize(QtCore.QSize(1099, 747))
-        self.login.setMaximumSize(QtCore.QSize(1099, 747))
-        self.login.setStyleSheet("")
-        self.login.setDocumentMode(False)
-        self.ventana = QtWidgets.QWidget(self.login)
+        self.setObjectName("Login")
+        self.resize(1050, 747)
+        self.setMinimumSize(QtCore.QSize(1050, 747))
+        self.setMaximumSize(QtCore.QSize(1050, 747))
+        self.setStyleSheet("")
+        self.setDocumentMode(False)
+        self.ventana = QtWidgets.QWidget(self)
         self.ventana.setObjectName("ventana")
         #FAVICON
         self.favicon = QIcon('img/coche.png')
-        self.login.setWindowIcon(self.favicon)
+        self.setWindowIcon(self.favicon)
         self.print_nickname = QtWidgets.QLabel(self.ventana)
         self.print_nickname.setGeometry(QtCore.QRect(310, 350, 170, 51))
         font = QtGui.QFont()
@@ -109,22 +109,23 @@ class MenuLogin(QMainWindow):
         self.print_password.raise_()
         self.input_nickname.raise_()
         self.input_password.raise_()
-        self.login.setCentralWidget(self.ventana)
+        self.setCentralWidget(self.ventana)
 
         self.retranslateUi()
-        QtCore.QMetaObject.connectSlotsByName(self.login)
+        QtCore.QMetaObject.connectSlotsByName(self)
 
         self.link_registrarse.clicked.connect(self.abrir_registrarse)
         self.boton_iniciar_sesion.clicked.connect(self.comprobar_datos)
+        self.show()
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.login.setWindowTitle(_translate("self.login", "AutoescuelaFast"))
-        self.print_nickname.setText(_translate("self.login", "Nombre de Usuario"))
-        self.print_password.setText(_translate("self.login", "Contraseña"))
-        self.boton_iniciar_sesion.setText(_translate("self.login", "INICIAR SESIÓN"))
-        self.print_iniciar_sesion.setText(_translate("self.login", "INICIAR SESIÓN"))
-        self.link_registrarse.setText(_translate("self.login", "Registrate"))
+        self.setWindowTitle(_translate("self", "AutoescuelaFast"))
+        self.print_nickname.setText(_translate("self", "Nombre de Usuario"))
+        self.print_password.setText(_translate("self", "Contraseña"))
+        self.boton_iniciar_sesion.setText(_translate("self", "INICIAR SESIÓN"))
+        self.print_iniciar_sesion.setText(_translate("self", "INICIAR SESIÓN"))
+        self.link_registrarse.setText(_translate("self", "Registrate"))
 
     def cargar_ficheros_en_app(self):
         self.almacen_usuarios.importar_usuarios()
@@ -132,8 +133,8 @@ class MenuLogin(QMainWindow):
 
     #ENLACE REGISTRASE
     def abrir_registrarse(self):
-        self.login.hide()
-        self.ventana_registro = Registrarse(self.almacen_usuarios, self.login)
+        self.hide()
+        self.ventana_registro = Registrarse(self.almacen_usuarios, self)
         
     #BOTÓN INICIAR SESIÓN
     def keyPressEvent(self, event):
@@ -148,16 +149,7 @@ class MenuLogin(QMainWindow):
     def comprobar_datos(self):
         nickname_var, password_var = self.recoger_campos_boton_iniciar_sesion()
         if self.almacen_usuarios.login_existencia_usuario(nickname_var, password_var):
-            self.login.hide()
-            self.ventana_menu_user = VentanaUser(self.almacen_usuarios, self.almacen_partidas, nickname_var, self.login)
+            self.hide()
+            self.ventana_menu_user = VentanaUser(self.almacen_usuarios, self.almacen_partidas, nickname_var, self)
         else:
-            campos_obligatorios = QMessageBox.warning(None, "Error", "Contraseña o nombre incorrectos")
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    ventana_principal = MenuLogin()
-    ventana_principal.login = ventana_principal
-    ventana_principal.setupUi()
-    ventana_principal.show()
-    sys.exit(app.exec_())
+            campos_obligatorios = QMessageBox.warning(self, "Error", "Contraseña o nombre incorrectos")

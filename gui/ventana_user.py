@@ -5,6 +5,7 @@ from PyQt5.QtGui import QIcon
 
 from gui.ventanauser.acerca_de import AcercaDe
 from gui.ventanauser.realizar_test import RealizarTest
+from gui.ventanauser.mi_perfil import MiPerfil
 
 import os
 import datetime
@@ -18,6 +19,7 @@ class VentanaUser(QMainWindow):
         self.ventana_login = ventana_login
         self.ventana_acerca_de = None
         self.ventana_realizar_test = None
+        self.ventana_mi_perfil = None
         self.RUTA_FOTO = os.path.abspath('./img/logofast.png')
         self.setupUi()
 
@@ -97,6 +99,8 @@ class VentanaUser(QMainWindow):
         #EVENTO BOTONES
         self.boton_acerca_de.clicked.connect(self.abrir_ventana_acerca_de)
         self.boton_realizar_test.clicked.connect(self.abrir_ventana_realizar_test)
+        self.boton_mis_stats.clicked.connect(self.abrir_ventana_mi_perfil)
+
         self.print_fecha_actual.raise_()
         self.boton_realizar_test.raise_()
         self.boton_mis_stats.raise_()
@@ -113,7 +117,7 @@ class VentanaUser(QMainWindow):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("self", "VentanaUsuario"))
         self.boton_realizar_test.setText(_translate("self", "REALIZAR TEST"))
-        self.boton_mis_stats.setText(_translate("self", "MIS ESTADÍSTICAS"))
+        self.boton_mis_stats.setText(_translate("self", "MI PERFIL"))
         self.boton_acerca_de.setText(_translate("self", "ACERCA DE"))
         fecha_actual = datetime.datetime.now().strftime("%H:%M:%S")
         self.timer = QTimer()
@@ -133,6 +137,10 @@ class VentanaUser(QMainWindow):
     def abrir_ventana_realizar_test(self):
         self.hide()
         self.ventana_realizar_test = RealizarTest(self, self.almacen_partidas, self.nickname_var)
+
+    def abrir_ventana_mi_perfil(self):
+        self.hide()
+        self.ventana_mi_perfil = MiPerfil(self)
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):
