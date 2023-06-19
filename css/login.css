@@ -1,0 +1,42 @@
+QLabel#print_nickname{
+    color: #09B5CB;
+    font-size: 12pt;
+}
+
+QLabel#print_password{
+    color: #09B5CB;
+    font-size: 12pt;
+}
+
+QLineEdit#input_nickname{
+    font-size: 16px;
+}
+
+QFrame#fondo_negro{
+    background-color: rgb(56, 56, 56);
+}
+
+QPushButton#boton_iniciar_sesion{
+    background-color: #09B5CB;
+    color: #FFFFFF;
+    border-radius: 4px;
+    font: 8pt "MS Shell Dlg 2";
+}
+
+QPushButton#boton_iniciar_sesion:hover{
+    background-color: #037e8f;
+}
+
+QPushButton#boton_iniciar_sesion:pressed{
+    background-color: #036666;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+
+QLabel#print_iniciar_sesion{
+    font: 36pt "Bahnschrift SemiBold";
+    color: #09B5CB;
+}
+
+QCommandLinkButton#link_registrarse{
+    color: #09B5CB;
+}

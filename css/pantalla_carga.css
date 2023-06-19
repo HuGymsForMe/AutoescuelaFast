@@ -1,0 +1,17 @@
+QFrame#frame_pantalla_carga{
+    background-color: rgb(56, 56, 56);
+}
+
+QProgressBar::chunk {
+    background-color: rgb(9, 181, 203);
+}
+
+QProgressBar{
+    border-radius: 4px;
+    background-color: #FFFFFF;
+}
+
+QLabel#print_cargando{
+    font: 12pt "MS Shell Dlg 2";
+    color: rgb(9, 181, 203);
+}

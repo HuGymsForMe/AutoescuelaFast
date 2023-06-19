@@ -1,0 +1,34 @@
+QLabel{
+    color: #09B5CB;
+    font: 12pt "MS Shell Dlg 2";
+}
+
+QLabel#print_registrarse{
+    font: 63 36pt "Bahnschrift SemiBold";
+}
+
+QFrame#frame{
+    background-color: rgb(56, 56, 56);
+}
+
+QLineEdit{
+    font-size: 16px;
+}
+
+QPushButton#boton_registrarse{
+    background-color: #09B5CB;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font: 10pt "MS Shell Dlg 2";
+}
+
+QPushButton#boton_registrarse:hover{
+    background-color: #037e8f;
+}
+
+QPushButton#boton_registrarse:pressed{
+    background-color: #036666;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+
+/*MODIFICACIÓN DE LOS QMESSAGEBOX*/

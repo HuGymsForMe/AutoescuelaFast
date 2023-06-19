@@ -2232,16 +2232,16 @@ class Test5(QMainWindow):
 
     def devolver_respuesta_17(self):
         self.opcion_17_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_17_2.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_17_3.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_17_2.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_17_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_17_1.setEnabled(False)
         self.opcion_17_2.setEnabled(False)
         self.opcion_17_3.setEnabled(False)
-        if self.opcion_17_3.isChecked():
+        if self.opcion_17_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_017.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_17_1.isChecked() or self.opcion_17_2.isChecked():
+        elif self.opcion_17_1.isChecked() or self.opcion_17_3.isChecked():
             self.boton_017.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
@@ -2467,18 +2467,18 @@ class Test5(QMainWindow):
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):
-        cerrar_antes_de_tiempo = QMessageBox.question(
-            self,
-            "Cerrar Test",
-            "¿Estás seguro de que quieres cerrar la aplicación?\n    No se guardarán tus resultados actuales",
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.No
-        )
-        if cerrar_antes_de_tiempo == QMessageBox.Yes:
-            self.cerrar_ventana_hija()
-        else:
-            event.ignore()
-
+        if self.no_contestadas > 0:
+            cerrar_antes_de_tiempo = QMessageBox.question(
+                self,
+                "Cerrar Test",
+                "¿Estás seguro de que quieres cerrar la aplicación?\n    No se guardarán tus resultados actuales",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+            if cerrar_antes_de_tiempo == QMessageBox.Yes:
+                self.cerrar_ventana_hija()
+            else:
+                event.ignore()
 
     def cerrar_ventana_hija(self):
         self.close()

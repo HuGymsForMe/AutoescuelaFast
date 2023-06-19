@@ -1,0 +1,29 @@
+QPushButton{
+    font: 13pt "MS Shell Dlg 2";
+    background-color: #09B5CB;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+QPushButton:hover{
+    background-color: #0ccbbb;
+}
+
+QPushButton:pressed{
+    background-color: #036666;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+
+QLabel#print_bienvenido_usuario{
+    color: rgb(255, 255, 255);
+    font: 18pt "MS Shell Dlg 2", italic;
+}
+
+QFrame#frame_ventana_user{
+    background-color: rgb(56, 56, 56);
+}
+
+QLabel#print_fecha_actual{
+    color: #FFFFFF;
+    font: 12pt "MS Shell Dlg 2";
+}

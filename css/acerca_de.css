@@ -1,0 +1,18 @@
+QLabel#print_body{
+    font: 10pt "MS Shell Dlg 2";
+    color: #09B5CB;
+}
+
+QLabel#print_title{
+    font: 22pt "MS Shell Dlg 2"; 
+    color: #09B5CB; 
+}
+
+QLabel#print_footer{
+    font: 10pt "MS Shell Dlg 2";
+    color: rgb(56, 56, 56);
+}
+
+QFrame#frame_body{
+    background-color: rgb(56, 56, 56);
+}

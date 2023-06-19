@@ -1993,17 +1993,17 @@ class Test10(QMainWindow):
             self.falladas += 1
 
     def devolver_respuesta_2(self):
-        self.opcion_2_1.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_2_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_2_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_2_2.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_2_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_2_1.setEnabled(False)
         self.opcion_2_2.setEnabled(False)
         self.opcion_2_3.setEnabled(False)
-        if self.opcion_2_1.isChecked():
+        if self.opcion_2_2.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_002.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_2_2.isChecked() or self.opcion_2_3.isChecked():
+        elif self.opcion_2_1.isChecked() or self.opcion_2_3.isChecked():
             self.boton_002.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
@@ -2089,8 +2089,8 @@ class Test10(QMainWindow):
             self.falladas += 1
 
     def devolver_respuesta_8(self):
-        self.opcion_8_1.setStyleSheet("color: rgb(138, 255, 156);")
-        self.opcion_8_2.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_8_1.setStyleSheet("color: rgb(255, 76, 76);")
+        self.opcion_8_2.setStyleSheet("color: rgb(138, 255, 156);")
         self.opcion_8_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_8_1.setEnabled(False)
         self.opcion_8_2.setEnabled(False)
@@ -2137,17 +2137,17 @@ class Test10(QMainWindow):
             self.falladas += 1
 
     def devolver_respuesta_11(self):
-        self.opcion_11_1.setStyleSheet("color: rgb(255, 76, 76);")
-        self.opcion_11_2.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_11_1.setStyleSheet("color: rgb(138, 255, 156);")
+        self.opcion_11_2.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_11_3.setStyleSheet("color: rgb(255, 76, 76);")
         self.opcion_11_1.setEnabled(False)
         self.opcion_11_2.setEnabled(False)
         self.opcion_11_3.setEnabled(False)
-        if self.opcion_11_2.isChecked():
+        if self.opcion_11_1.isChecked():
             self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_011.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
-        elif self.opcion_11_1.isChecked() or self.opcion_11_3.isChecked():
+        elif self.opcion_11_2.isChecked() or self.opcion_11_3.isChecked():
             self.boton_011.setStyleSheet("QPushButton{\n""background-color: rgb(255, 76, 76);\n""border-radius: 4px\n""}\n")
             self.no_contestadas -= 1
             self.falladas += 1
@@ -2256,7 +2256,7 @@ class Test10(QMainWindow):
         self.opcion_18_2.setEnabled(False)
         self.opcion_18_3.setEnabled(False)
         if self.opcion_18_2.isChecked():
-            self.no_contes2tadas -= 1
+            self.no_contestadas -= 1
             self.acertadas += 1
             self.boton_018.setStyleSheet("QPushButton{\n""background-color: rgb(138, 255, 156);\n""border-radius: 4px\n""}\n")
         elif self.opcion_18_1.isChecked() or self.opcion_18_3.isChecked():
@@ -2469,17 +2469,18 @@ class Test10(QMainWindow):
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):
-        cerrar_antes_de_tiempo = QMessageBox.question(
-            self,
-            "Cerrar Test",
-            "¿Estás seguro de que quieres cerrar la aplicación?\n    No se guardarán tus resultados actuales",
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.No
-        )
-        if cerrar_antes_de_tiempo == QMessageBox.Yes:
-            self.cerrar_ventana_hija()
-        else:
-            event.ignore()
+        if self.no_contestadas > 0:
+            cerrar_antes_de_tiempo = QMessageBox.question(
+                self,
+                "Cerrar Test",
+                "¿Estás seguro de que quieres cerrar la aplicación?\n    No se guardarán tus resultados actuales",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+            if cerrar_antes_de_tiempo == QMessageBox.Yes:
+                self.cerrar_ventana_hija()
+            else:
+                event.ignore()
 
     def cerrar_ventana_hija(self):
         self.close()

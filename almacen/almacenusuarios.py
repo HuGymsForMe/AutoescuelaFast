@@ -31,7 +31,6 @@ class AlmacenUsuarios:
                 self._usuarios.append(usuario) 
 
     def login_existencia_usuario(self, nickname_var, password_var):
-        #DEBERIA PONER BIEN SU CONTRASEÑA
         for user in self._usuarios:
             if nickname_var == user._nickname and password_var == user._password:
                 return True
@@ -50,8 +49,22 @@ class AlmacenUsuarios:
             self._usuarios.append(nuevo_usuario)
             return True
         return False
-
+    
+    def encontrar_usuario_para_mostrar_datos(self, nombre_usuario):
+        with open(os.path.join(self.RUTA_FICHEROS, 'usuarios.csv'), 'r', encoding='UTF-8') as fichero_usuarios:
+            lineas = fichero_usuarios.readlines()
+            for linea in lineas:
+                datos = linea.split(';')
+                nickname = datos[self.CamposFicheroUsuario.NICKNAME].strip()
+                if nickname == nombre_usuario:
+                    nombre = datos[self.CamposFicheroUsuario.NOMBRE].strip()
+                    gmail = datos[self.CamposFicheroUsuario.GMAIL].strip()
+                    apellidos = datos[self.CamposFicheroUsuario.APELLIDOS].strip()
+                    fecha_ingreso = datos[self.CamposFicheroUsuario.FECHA_INGRESO].strip()
+                    return nombre, gmail, apellidos, fecha_ingreso
+            
     def sobreescribir_ficheros(self):
         with open(os.path.join(self.RUTA_FICHEROS, 'usuarios.csv'), 'w', encoding='UTF-8') as fichero_usuarios:
             for usuario in self._usuarios:
                 fichero_usuarios.write(f"{str(usuario)}\n")
+

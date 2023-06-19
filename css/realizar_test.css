@@ -1,0 +1,24 @@
+QPushButton{
+    font: 11pt MS Shell Dlg 2;
+    background-color: #09B5CB;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+QPushButton:hover{
+    background-color: #037e8f;
+}
+
+QPushButton:pressed{
+    background-color: #036666;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+}
+
+QFrame#fondo_test{
+    background-color: rgb(56, 56, 56);
+}
+
+QLabel{
+    font: 75 italic 16pt "Arial";
+    color: #FFFFFF;
+}

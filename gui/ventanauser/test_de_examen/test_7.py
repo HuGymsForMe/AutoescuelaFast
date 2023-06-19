@@ -2467,18 +2467,18 @@ class Test7(QMainWindow):
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):
-        cerrar_antes_de_tiempo = QMessageBox.question(
-            self,
-            "Cerrar Test",
-            "¿Estás seguro de que quieres cerrar la aplicación?\n    No se guardarán tus resultados actuales",
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.No
-        )
-        if cerrar_antes_de_tiempo == QMessageBox.Yes:
-            self.cerrar_ventana_hija()
-        else:
-            event.ignore()
-
+        if self.no_contestadas > 0:
+            cerrar_antes_de_tiempo = QMessageBox.question(
+                self,
+                "Cerrar Test",
+                "¿Estás seguro de que quieres cerrar la aplicación?\n    No se guardarán tus resultados actuales",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+            if cerrar_antes_de_tiempo == QMessageBox.Yes:
+                self.cerrar_ventana_hija()
+            else:
+                event.ignore()
 
     def cerrar_ventana_hija(self):
         self.close()

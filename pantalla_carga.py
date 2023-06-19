@@ -3,14 +3,15 @@ from PyQt5.QtCore import QBasicTimer
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtGui import QIcon
 
-from login import MenuLogin
 import os
 
+from login import MenuLogin
 
 class PantallaDeCarga(QMainWindow):
     def __init__(self):
         super().__init__()
         self.RUTA_FOTO = os.path.abspath('img/logofast.png')
+        self.RUTA_CSS = os.path.abspath('./css/pantalla_carga.css')
         self.setupUi()
 
     def setupUi(self):
@@ -18,11 +19,11 @@ class PantallaDeCarga(QMainWindow):
         self.resize(800, 448)
         self.setMinimumSize(QtCore.QSize(800, 448))
         self.setMaximumSize(QtCore.QSize(800, 480))
-
-        #FAVICON
+        with open(self.RUTA_CSS) as f:
+            self.setStyleSheet(f.read())
+            
         self.favicon = QIcon('img/coche.png')
         self.setWindowIcon(self.favicon)
-
         self.centralwidget = QtWidgets.QWidget(self)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -30,7 +31,6 @@ class PantallaDeCarga(QMainWindow):
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.frame_pantalla_carga = QtWidgets.QFrame(self.centralwidget)
-        self.frame_pantalla_carga.setStyleSheet("background-color: rgb(56, 56, 56);")
         self.frame_pantalla_carga.setInputMethodHints(QtCore.Qt.ImhNone)
         self.frame_pantalla_carga.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_pantalla_carga.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -38,7 +38,6 @@ class PantallaDeCarga(QMainWindow):
         self.frame_pantalla_carga.setObjectName("frame_pantalla_carga")
         self.barra_de_progreso = QtWidgets.QProgressBar(self.frame_pantalla_carga)
         self.barra_de_progreso.setGeometry(QtCore.QRect(190, 330, 461, 41))
-        self.barra_de_progreso.setStyleSheet("QProgressBar::chunk {background-color: rgb(9, 181, 203);}\nQProgressBar {border-radius: 4px;\nbackground-color: #FFFFFF}")
         self.barra_de_progreso.setMinimum(0)
         self.barra_de_progreso.setMaximum(100)
         self.barra_de_progreso.setTextVisible(False)
@@ -47,12 +46,9 @@ class PantallaDeCarga(QMainWindow):
         self.barra_de_progreso.setObjectName("barra_de_progreso")
         self.print_cargando = QtWidgets.QLabel(self.frame_pantalla_carga)
         self.print_cargando.setGeometry(QtCore.QRect(360, 390, 141, 31))
-        self.print_cargando.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
-                                          "color: rgb(9, 181, 203);")
         self.print_cargando.setObjectName("print_cargando")
         self.foto_coche = QtWidgets.QLabel(self.frame_pantalla_carga)
         self.foto_coche.setGeometry(QtCore.QRect(150, 60, 400, 211))
-        self.foto_coche.setStyleSheet("color: rgb(9, 181, 203);")
         self.foto_coche.setObjectName("foto_coche")
         imagen_coche = QtGui.QImage(self.RUTA_FOTO)
         if imagen_coche.isNull():
@@ -76,7 +72,7 @@ class PantallaDeCarga(QMainWindow):
             self.timer.stop()
             return
         elif self.progress_value == 100:
-            self.hide()
+            self.close()
             self.menu_login = MenuLogin()
         
         self.progress_value += 1

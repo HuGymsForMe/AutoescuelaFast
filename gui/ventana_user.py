@@ -21,6 +21,7 @@ class VentanaUser(QMainWindow):
         self.ventana_realizar_test = None
         self.ventana_mi_perfil = None
         self.RUTA_FOTO = os.path.abspath('./img/logofast.png')
+        self.RUTA_CSS = os.path.abspath('./css/ventana_user.css')
         self.setupUi()
 
     def setupUi(self):
@@ -28,48 +29,23 @@ class VentanaUser(QMainWindow):
         self.resize(948, 639)
         self.setMinimumSize(QtCore.QSize(948, 639))
         self.setMaximumSize(QtCore.QSize(948, 639))
+        with open(self.RUTA_CSS) as f:
+            self.setStyleSheet(f.read())
+        #FAVICON
         self.favicon = QIcon('./img/coche.png')
         self.setWindowIcon(self.favicon)
         self.boton_realizar_test = QtWidgets.QPushButton(self)
         self.boton_realizar_test.setGeometry(QtCore.QRect(90, 220, 521, 81))
         self.boton_realizar_test.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_realizar_test.setStyleSheet("QPushButton{\n"
-"    font: 13pt \"MS Shell Dlg 2\";\n"
-"background-color: #09B5CB;\n"
-"color: #FFFFFF;\n"
-"border-radius: 4px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color: #0ccbbb;\n"
-"}")
         self.boton_realizar_test.setObjectName("boton_realizar_test")
         self.boton_mis_stats = QtWidgets.QPushButton(self)
         self.boton_mis_stats.setGeometry(QtCore.QRect(90, 340, 521, 81))
         self.boton_mis_stats.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_mis_stats.setStyleSheet("QPushButton{\n"
-"    font: 13pt \"MS Shell Dlg 2\";\n"
-"background-color: #09B5CB;\n"
-"color: #FFFFFF;\n"
-"border-radius: 4px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color: #0ccbbb;\n"
-"}")
         self.boton_mis_stats.setObjectName("boton_mis_stats")
         self.boton_acerca_de = QtWidgets.QPushButton(self)
         self.boton_acerca_de.setGeometry(QtCore.QRect(90, 460, 521, 81))
         self.boton_acerca_de.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_acerca_de.setStyleSheet("QPushButton{\n"
-"    font: 13pt \"MS Shell Dlg 2\";\n"
-"background-color: #09B5CB;\n"
-"color: #FFFFFF;\n"
-"border-radius: 4px;\n"
-"}\n"
-"QPushButton:hover{\n"
-"background-color: #0ccbbb;\n"
-"}")
         self.boton_acerca_de.setObjectName("boton_acerca_de")
-
         self.foto_coche = QtWidgets.QLabel(self)
         imagen_coche = QtGui.QImage(self.RUTA_FOTO)
         if imagen_coche.isNull():
@@ -79,20 +55,15 @@ class VentanaUser(QMainWindow):
         self.foto_coche.setGeometry(QtCore.QRect(530, -40, 491, 351))
         self.print_bienvenido_usuario = QtWidgets.QLabel(self)
         self.print_bienvenido_usuario.setGeometry(QtCore.QRect(120, 80, 571, 91))
-        self.print_bienvenido_usuario.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 18pt \"MS Shell Dlg 2\", italic;")
         self.print_bienvenido_usuario.setObjectName("print_bienvenido_usuario")
         self.frame_ventana_user = QtWidgets.QFrame(self)
         self.frame_ventana_user.setGeometry(QtCore.QRect(0, 0, 951, 641))
-        self.frame_ventana_user.setStyleSheet("background-color: rgb(56, 56, 56);")
         self.frame_ventana_user.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_ventana_user.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_ventana_user.setObjectName("frame_ventana_user")
         self.frame_ventana_user.raise_()
         self.print_fecha_actual = QtWidgets.QLabel(self)
         self.print_fecha_actual.setGeometry(QtCore.QRect(30, 10, 171, 61))
-        self.print_fecha_actual.setStyleSheet("color: #FFFFFF;\n"
-"font: 12pt \"MS Shell Dlg 2\";")
         self.print_fecha_actual.setText(str(QtCore.Qt.AutoText))
         self.print_fecha_actual.setObjectName("print_fecha_actual")
 
@@ -140,7 +111,7 @@ class VentanaUser(QMainWindow):
 
     def abrir_ventana_mi_perfil(self):
         self.hide()
-        self.ventana_mi_perfil = MiPerfil(self)
+        self.ventana_mi_perfil = MiPerfil(self, self.almacen_usuarios, self.almacen_partidas, self.nickname_var)
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):

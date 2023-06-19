@@ -1280,7 +1280,7 @@ class Test8(QMainWindow):
         self.foto_11.setGeometry(QtCore.QRect(20, 80, 331, 271))
         self.foto_11.setStyleSheet("color: rgb(255, 255, 255)")
         self.foto_11.setObjectName("foto_11")
-        imagen_11 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen211.jpg'))
+        imagen_11 = QtGui.QImage(os.path.join(self.RUTA_FOTO, 'imagen221.jpg'))
         if imagen_11.isNull():
             print("Error al cargar la imagen")
         else:
@@ -2467,17 +2467,18 @@ class Test8(QMainWindow):
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):
-        cerrar_antes_de_tiempo = QMessageBox.question(
-            self,
-            "Cerrar Test",
-            "¿Estás seguro de que quieres cerrar la aplicación?\n    No se guardarán tus resultados actuales",
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.No
-        )
-        if cerrar_antes_de_tiempo == QMessageBox.Yes:
-            self.cerrar_ventana_hija()
-        else:
-            event.ignore()
+        if self.no_contestadas > 0:
+            cerrar_antes_de_tiempo = QMessageBox.question(
+                self,
+                "Cerrar Test",
+                "¿Estás seguro de que quieres cerrar la aplicación?\n    No se guardarán tus resultados actuales",
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+            if cerrar_antes_de_tiempo == QMessageBox.Yes:
+                self.cerrar_ventana_hija()
+            else:
+                event.ignore()
 
     def cerrar_ventana_hija(self):
         self.close()
