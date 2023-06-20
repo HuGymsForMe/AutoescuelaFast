@@ -49,7 +49,7 @@ class MiPerfil(QMainWindow):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.frame_scroll = QtWidgets.QFrame(self.scrollAreaWidgetContents)
-        self.frame_scroll.setMinimumSize(QtCore.QSize(800, 1620))
+        self.frame_scroll.setMinimumSize(QtCore.QSize(800, 1650))
         self.frame_scroll.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_scroll.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_scroll.setObjectName("frame_scroll")
@@ -87,7 +87,7 @@ class MiPerfil(QMainWindow):
         self.mi_gmail.setGeometry(QtCore.QRect(490, 380, 381, 61))
         self.mi_gmail.setObjectName("mi_gmail")
         self.title_mis_stats = QtWidgets.QLabel(self.frame_scroll)
-        self.title_mis_stats.setGeometry(QtCore.QRect(260, 480, 351, 71))
+        self.title_mis_stats.setGeometry(QtCore.QRect(270, 480, 351, 71))
         self.title_mis_stats.setObjectName("title_mis_stats")
         self.linea_separacion = QtWidgets.QFrame(self.frame_scroll)
         self.linea_separacion.setGeometry(QtCore.QRect(-20, 440, 911, 20))
@@ -101,11 +101,19 @@ class MiPerfil(QMainWindow):
         self.num_test_realizados = QtWidgets.QLabel(self.frame_scroll)
         self.num_test_realizados.setGeometry(QtCore.QRect(540, 540, 41, 71))
         self.num_test_realizados.setObjectName("num_test_realizados")
+
+        self.print_tiempo_medio = QtWidgets.QLabel(self.frame_scroll)
+        self.print_tiempo_medio.setGeometry(QtCore.QRect(290, 590, 251, 71))
+        self.print_tiempo_medio.setObjectName("print_test_realizados")
+        self.num_tiempo_medio = QtWidgets.QLabel(self.frame_scroll)
+        self.num_tiempo_medio.setGeometry(QtCore.QRect(505, 590, 100, 71))
+        self.num_tiempo_medio.setObjectName("num_test_realizados")
+
         self.title_ultimos_test = QtWidgets.QLabel(self.frame_scroll)
-        self.title_ultimos_test.setGeometry(QtCore.QRect(240, 1000, 531, 71))
+        self.title_ultimos_test.setGeometry(QtCore.QRect(260, 1030, 531, 71))
         self.title_ultimos_test.setObjectName("title_ultimos_test")
         self.frame_footer = QtWidgets.QFrame(self.frame_scroll)
-        self.frame_footer.setGeometry(QtCore.QRect(-50, 1520, 941, 101))
+        self.frame_footer.setGeometry(QtCore.QRect(-50, 1550, 941, 101))
         self.frame_footer.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.frame_footer.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_footer.setObjectName("frame_footer")
@@ -114,9 +122,10 @@ class MiPerfil(QMainWindow):
         self.print_footer.setObjectName("print_footer")
 
         self.marco_diagrama_de_sectores = QtWidgets.QLabel(self.frame_scroll)
-        self.marco_diagrama_de_sectores.setGeometry(QtCore.QRect(166, 626, 529, 349))
+        self.marco_diagrama_de_sectores.setGeometry(QtCore.QRect(166, 656, 529, 349))
         self.marco_diagrama_de_sectores.setProperty("class", "marco_diagrama")
 
+        self.tiempo_promedio = self.almacen_partidas.calcular_promedio_tiempos(self.nickname_var)
         self.apto, self.no_apto, self.test_realizados = self.almacen_partidas.crear_grafico_sectores(self.nickname_var)
         diagrama_de_sectores = Figure()
         canvas = FigureCanvas(diagrama_de_sectores)
@@ -134,11 +143,11 @@ class MiPerfil(QMainWindow):
         pixmap = canvas.grab().scaledToWidth(521) #ANCHO DIAGRAMA
         self.diagrama_de_sectores = QtWidgets.QLabel(self.frame_scroll)
         self.diagrama_de_sectores.setPixmap(pixmap)
-        self.diagrama_de_sectores.setGeometry(QtCore.QRect(170, 630, 521, 341))
+        self.diagrama_de_sectores.setGeometry(QtCore.QRect(170, 660, 521, 341))
         self.diagrama_de_sectores.setObjectName("diagrama_de_sectores")
 
         self.marco_diagrama_de_barras = QtWidgets.QLabel(self.frame_scroll)
-        self.marco_diagrama_de_barras.setGeometry(QtCore.QRect(166, 1086, 529, 349))
+        self.marco_diagrama_de_barras.setGeometry(QtCore.QRect(166, 1116, 529, 349))
         self.marco_diagrama_de_barras.setProperty("class", "marco_diagrama")
 
         categorias, valores = self.almacen_partidas.crear_grafico_barras(self.nickname_var)
@@ -150,7 +159,7 @@ class MiPerfil(QMainWindow):
 
         self.diagrama_de_barras = QtWidgets.QLabel(self.frame_scroll)
         self.diagrama_de_barras.setPixmap(pixmap)
-        self.diagrama_de_barras.setGeometry(QtCore.QRect(170, 1090, 521, 341))
+        self.diagrama_de_barras.setGeometry(QtCore.QRect(170, 1120, 521, 341))
         self.diagrama_de_barras.setObjectName("diagrama_de_barras")
 
         self.verticalLayout_2.addWidget(self.frame_scroll)
@@ -182,6 +191,8 @@ class MiPerfil(QMainWindow):
         self.title_mis_stats.setText(_translate("self", "MIS ESTADÍSTICAS"))
         self.print_test_realizados.setText(_translate("self", "TEST REALIZADOS: "))
         self.num_test_realizados.setText(_translate("self", f"{self.test_realizados}"))
+        self.print_tiempo_medio.setText(_translate("self", f"TIEMPO MEDIO: "))
+        self.num_tiempo_medio.setText(_translate("self", f"{self.tiempo_promedio}"))
 
         self.marco_diagrama_de_sectores.setText(_translate("self", ""))
 

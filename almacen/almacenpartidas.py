@@ -16,6 +16,7 @@ class AlmacenPartidas:
         self._id_partida = []
         self._aciertos_grafico_barras = []
         self._num_partida = []
+        self._tiempos_usuario_str = []
         self.RUTA_FICHEROS = os.path.abspath('../autoescuelafast/files')
 
     def importar_partidas(self):
@@ -81,8 +82,49 @@ class AlmacenPartidas:
                 if contador_partidas > 10:
                     return self._num_partida, self._aciertos_grafico_barras
             return self._num_partida, self._aciertos_grafico_barras
-                
-
         
+    def recoger_tiempos_test(self, nombre_usuario):
+        contador_partidas = 0
+        with open(os.path.join(self.RUTA_FICHEROS, 'partidas.csv'), 'r', encoding='UTF-8') as fichero_partidas:
+            lineas = fichero_partidas.readlines()
+            for linea in lineas:
+                datos = linea.split(';')
+                nickname = datos[self.CamposFicheroPartidas.NICKNAME].strip()
+                if nickname == nombre_usuario:
+                    tiempo = datos[self.CamposFicheroPartidas.TIEMPO].strip()
+                    self._tiempos_usuario_str.append(tiempo)
+            return self._tiempos_usuario_str        
+
+    def calcular_promedio_tiempos(self, nombre_usuario):
+        tiempos = self.recoger_tiempos_test(nombre_usuario)
+        if not tiempos:
+            return "00:00"
+
+        suma_segundos = 0
+        for tiempo_str in tiempos:
+            segundos = self.convertir_a_segundos(tiempo_str)
+            suma_segundos += segundos
+
+        cantidad_tiempos = len(tiempos)
+        promedio_segundos = suma_segundos / cantidad_tiempos
+
+        promedio_minutos = int(promedio_segundos // 60)
+        promedio_segundos %= 60
+
+        promedio_tiempo_str = self.convertir_a_str(promedio_minutos, int(promedio_segundos))
+        return promedio_tiempo_str
+
+    @staticmethod
+    def convertir_a_segundos(tiempo_str):
+        minutos, segundos = tiempo_str.split(":")
+        minutos = int(minutos)
+        segundos = int(segundos)
+        total_segundos = minutos * 60 + segundos
+        return total_segundos
+
+    @staticmethod
+    def convertir_a_str(minutos, segundos):
+        return "{:02d}:{:02d}".format(minutos, segundos)
+
 
         

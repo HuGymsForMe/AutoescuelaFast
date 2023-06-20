@@ -4,6 +4,7 @@ QFrame#frame_pantalla_carga{
 
 QProgressBar::chunk {
     background-color: rgb(9, 181, 203);
+    border-radius: 4px;
 }
 
 QProgressBar{
