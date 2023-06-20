@@ -1,15 +1,12 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
-from PyQt5.Qt import QSizePolicy
-from PyQt5.QtGui import QIcon, QImage, QPixmap
+import matplotlib.pyplot as plt
+import os
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 
-import matplotlib.pyplot as plt
-import os
-
-#AÑADIR TIEMPO MEDIO TEST
+from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMainWindow
+from PyQt5.QtGui import QIcon
 
 class MiPerfil(QMainWindow):
     def __init__(self, ventana_user, almacen_usuarios, almacen_partidas, nickname_var):

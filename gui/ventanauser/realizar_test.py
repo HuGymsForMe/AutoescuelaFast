@@ -1,3 +1,5 @@
+import os
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtGui import QIcon
@@ -12,8 +14,6 @@ from gui.ventanauser.test_de_examen.test_7 import Test7
 from gui.ventanauser.test_de_examen.test_8 import Test8
 from gui.ventanauser.test_de_examen.test_9 import Test9
 from gui.ventanauser.test_de_examen.test_10 import Test10
-
-import os
 
 class RealizarTest(QMainWindow):
     def __init__(self, ventana_user, almacen_partidas, nickname_var):

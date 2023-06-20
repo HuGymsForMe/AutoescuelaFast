@@ -1,9 +1,10 @@
-QLabel{
+.print_campos, QLabel#print_fecha_actual{
     color: #09B5CB;
     font: 12pt "MS Shell Dlg 2";
 }
 
 QLabel#print_registrarse{
+    color: #09B5CB;
     font: 63 36pt "Bahnschrift SemiBold";
 }
 

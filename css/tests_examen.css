@@ -1,0 +1,41 @@
+QFrame#frame_body{
+    background-color: rgb(56, 56, 56);
+}
+
+QFrame#frame_botones{
+    background-color: rgb(9, 181, 203);
+}
+
+.botones_preguntas{
+    background-color: rgb(56, 56, 56);
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.botones_preguntas:hover{
+    background-color: rgb(86, 86, 86);
+}
+
+QLabel#print_cronometro{
+    font: 18pt "MS Shell Dlg 2";
+    color: rgb(255, 255, 255);
+}
+
+QPushButton#boton_finalizar{
+    background-color: rgb(9, 181, 203);
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+    
+QPushButton#boton_finalizar:hover{
+    background-color: rgb(86, 86, 86);
+}
+
+QRadioButton, .enunciado{
+    color: #FFFFFF;
+}
+
+.title_pregunta{
+    color: rgb(255, 255, 255);
+    font: 22pt "MS Shell Dlg 2";
+}

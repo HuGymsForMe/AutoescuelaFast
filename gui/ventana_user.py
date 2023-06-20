@@ -1,3 +1,6 @@
+import datetime
+import os
+
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
 from PyQt5.QtCore import QTimer
@@ -6,9 +9,6 @@ from PyQt5.QtGui import QIcon
 from gui.ventanauser.acerca_de import AcercaDe
 from gui.ventanauser.realizar_test import RealizarTest
 from gui.ventanauser.mi_perfil import MiPerfil
-
-import os
-import datetime
 
 class VentanaUser(QMainWindow):
     def __init__(self, almacen_usuarios, almacen_partidas, nickname_var, ventana_login):

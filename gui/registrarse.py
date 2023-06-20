@@ -1,11 +1,10 @@
+import datetime
+import os
+
 from PyQt5.QtCore import QTimer
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox, QMainWindow
-from PyQt5.QtGui import QIcon, QCloseEvent
-
-
-import datetime
-import os
+from PyQt5.QtGui import QIcon
 
 from clases.validator import Validator
 
@@ -32,19 +31,19 @@ class Registrarse(QMainWindow):
         self.print_password = QtWidgets.QLabel(self)
         self.print_password.setGeometry(QtCore.QRect(130, 280, 181, 51))
         self.print_password.setText(str(QtCore.Qt.AutoText))
-        self.print_password.setObjectName("print_password")
+        self.print_password.setProperty("class", "print_campos")
         self.print_confirm_password = QtWidgets.QLabel(self)
         self.print_confirm_password.setGeometry(QtCore.QRect(130, 390, 251, 51))
         self.print_confirm_password.setText(str(QtCore.Qt.AutoText))
-        self.print_confirm_password.setObjectName("print_confirm_password")
+        self.print_confirm_password.setProperty("class", "print_campos")
         self.print_name = QtWidgets.QLabel(self)
         self.print_name.setGeometry(QtCore.QRect(470, 280, 81, 51))
         self.print_name.setText(str(QtCore.Qt.AutoText))
-        self.print_name.setObjectName("print_name")
+        self.print_name.setProperty("class", "print_campos")
         self.print_apellidos = QtWidgets.QLabel(self)
         self.print_apellidos.setGeometry(QtCore.QRect(470, 390, 111, 51))
         self.print_apellidos.setText(str(QtCore.Qt.AutoText))
-        self.print_apellidos.setObjectName("print_apellidos")
+        self.print_apellidos.setProperty("class", "print_campos")
         self.input_nickname = QtWidgets.QLineEdit(self)
         self.input_nickname.setGeometry(QtCore.QRect(130, 230, 291, 41))
         self.input_nickname.setObjectName("input_nickname")
@@ -70,13 +69,13 @@ class Registrarse(QMainWindow):
             self.foto_coche.setPixmap(QtGui.QPixmap.fromImage(imagen_coche))
         self.foto_coche.setGeometry(QtCore.QRect(70, 450, 491, 351))
         self.print_fecha_actual = QtWidgets.QLabel(self)
-        self.print_fecha_actual.setGeometry(QtCore.QRect(890, 10, 171, 61))
+        self.print_fecha_actual.setGeometry(QtCore.QRect(850, 40, 171, 61))
         self.print_fecha_actual.setText(str(QtCore.Qt.AutoText))
         self.print_fecha_actual.setObjectName("print_fecha_actual")
         self.print_nickname = QtWidgets.QLabel(self)
         self.print_nickname.setGeometry(QtCore.QRect(130, 170, 250, 51))
         self.print_nickname.setText(str(QtCore.Qt.AutoText))
-        self.print_nickname.setObjectName("print_nickname")
+        self.print_nickname.setProperty("class", "print_campos")
         self.boton_registrarse = QtWidgets.QPushButton(self)
         self.boton_registrarse.setGeometry(QtCore.QRect(780, 600, 231, 71))
         self.boton_registrarse.setObjectName("boton_registrarse")
@@ -84,7 +83,7 @@ class Registrarse(QMainWindow):
         self.print_correo_electronico = QtWidgets.QLabel(self)
         self.print_correo_electronico.setGeometry(QtCore.QRect(470, 170, 251, 51))
         self.print_correo_electronico.setText(str(QtCore.Qt.AutoText))
-        self.print_correo_electronico.setObjectName("print_correo_electronico")
+        self.print_correo_electronico.setProperty("class", "print_campos")
         self.input_apellidos = QtWidgets.QLineEdit(self)
         self.input_apellidos.setGeometry(QtCore.QRect(470, 440, 291, 41))
         self.input_apellidos.setObjectName("input_apellidos")
