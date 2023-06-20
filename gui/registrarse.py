@@ -14,7 +14,8 @@ class Registrarse(QMainWindow):
         self.almacen_usuarios = almacen_usuarios
         self.validador = Validator()
         self.ventana_login = ventana_login
-        self.RUTA_FOTO = os.path.abspath('./img/logofast.png')
+        self.RUTA_COCHE = os.path.abspath('./img/logofast.png')
+        self.RUTA_OJO = os.path.abspath('./img/ojopassword.png')
         self.RUTA_CSS = os.path.abspath('./css/registrarse.css')
         self.setupUi()
 
@@ -62,7 +63,7 @@ class Registrarse(QMainWindow):
         self.input_nombre.setGeometry(QtCore.QRect(470, 330, 291, 41))
         self.input_nombre.setObjectName("input_nombre")
         self.foto_coche = QtWidgets.QLabel(self)
-        imagen_coche = QtGui.QImage(self.RUTA_FOTO)
+        imagen_coche = QtGui.QImage(self.RUTA_COCHE)
         if imagen_coche.isNull():
             print("Error al cargar la imagen")
         else:
@@ -97,6 +98,23 @@ class Registrarse(QMainWindow):
         self.print_registrarse.setCursor(QtGui.QCursor(QtCore.Qt.ArrowCursor))
         self.print_registrarse.setMouseTracking(False)
         self.print_registrarse.setObjectName("print_registrarse")
+
+        self.foto_ojo = QtWidgets.QLabel(self)
+        imagen_ojo = QtGui.QImage(self.RUTA_OJO)
+        if imagen_ojo.isNull():
+            print("Error al cargar la imagen")
+        else:
+            self.foto_ojo.setPixmap(QtGui.QPixmap.fromImage(imagen_ojo))
+        self.foto_ojo.setGeometry(QtCore.QRect(390, 338, 26, 26))
+
+        self.foto_ojo_2 = QtWidgets.QLabel(self)
+        imagen_ojo_2 = QtGui.QImage(self.RUTA_OJO)
+        if imagen_ojo_2.isNull():
+            print("Error al cargar la imagen")
+        else:
+            self.foto_ojo_2.setPixmap(QtGui.QPixmap.fromImage(imagen_ojo_2))
+        self.foto_ojo_2.setGeometry(QtCore.QRect(390, 448, 26, 26))
+
         self.frame.raise_()
         self.foto_coche.raise_()
         self.print_password.raise_()
@@ -113,6 +131,8 @@ class Registrarse(QMainWindow):
         self.boton_registrarse.raise_()
         self.print_correo_electronico.raise_()
         self.input_apellidos.raise_()
+        self.foto_ojo.raise_()
+        self.foto_ojo_2.raise_()
 
         self.retranslateUi()
         QtCore.QMetaObject.connectSlotsByName(self)
@@ -135,8 +155,12 @@ class Registrarse(QMainWindow):
         self.boton_registrarse.setText(_translate("self", "REGISTRARSE"))
         self.print_correo_electronico.setText(_translate("self", "Correo Electrónico"))
         self.print_registrarse.setText(_translate("self", "REGISTRARSE"))
+        self.foto_ojo.setText(_translate("self", ""))
+        self.foto_ojo_2.setText(_translate("self", ""))
 
         self.boton_registrarse.clicked.connect(self.comprobar_registro)
+        self.foto_ojo.mousePressEvent = self.visualizar_contrasenia
+        self.foto_ojo_2.mousePressEvent = self.visualizar_confirm_contrasenia
     
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_Enter or event.key() == QtCore.Qt.Key_Return:
@@ -145,6 +169,19 @@ class Registrarse(QMainWindow):
     def actualizar_fecha(self):
         fecha_actual = datetime.datetime.now().strftime("%H:%M:%S")
         self.print_fecha_actual.setText(fecha_actual)
+
+    def visualizar_contrasenia(self, event):
+        if self.input_password.echoMode() == QtWidgets.QLineEdit.Password:
+            self.input_password.setEchoMode(QtWidgets.QLineEdit.Normal)
+        else:
+            self.input_password.setEchoMode(QtWidgets.QLineEdit.Password)
+
+    def visualizar_confirm_contrasenia(self, event):
+        if self.input_confirm_password.echoMode() == QtWidgets.QLineEdit.Password:
+            self.input_confirm_password.setEchoMode(QtWidgets.QLineEdit.Normal)
+        else:
+            self.input_confirm_password.setEchoMode(QtWidgets.QLineEdit.Password)
+
      
     #COMPROBAR QUE LAS CONTRASEÑAS SEAN IGUALES
     def recoger_datos_registro(self):
@@ -171,7 +208,7 @@ class Registrarse(QMainWindow):
             if self.almacen_usuarios.add_usuario(nickname_var, password_var, gmail_var, name_var, apellidos_var):
                 QMessageBox.information(self, "Usuario Añadido", "Usuario añadido con éxito")
                 self.almacen_usuarios.sobreescribir_ficheros()
-                self.volver_al_menu()
+                self.cerrar_ventana_hija()
             else:
                 QMessageBox.information(self, "Usuario Incorrecto", "El usuario ya está añadido")
 
@@ -182,3 +219,6 @@ class Registrarse(QMainWindow):
     def cerrar_ventana_hija(self):
         self.close()
         self.ventana_login.show()
+
+
+

@@ -15,7 +15,8 @@ class MenuLogin(QMainWindow):
         super().__init__()
         self.ventana_registro = None
         self.ventana_menu_user = None
-        self.RUTA_FOTO = os.path.abspath('img/logofast.png')
+        self.RUTA_COCHE = os.path.abspath('img/logofast.png')
+        self.RUTA_OJO = os.path.abspath('img/ojopassword.png')
         self.RUTA_CSS = os.path.abspath('./css/login.css')
         self.setupUi()
 
@@ -59,7 +60,7 @@ class MenuLogin(QMainWindow):
         self.fondo_negro.setObjectName("fondo_negro")
         self.imagen_coche = QtWidgets.QLabel(self.fondo_negro)
         self.imagen_coche.setGeometry(QtCore.QRect(280, 70, 531, 431))
-        imagen_coche = QtGui.QImage(self.RUTA_FOTO)
+        imagen_coche = QtGui.QImage(self.RUTA_COCHE)
         if imagen_coche.isNull():
             print("Error al cargar la imagen")
         else:
@@ -84,11 +85,20 @@ class MenuLogin(QMainWindow):
         self.link_registrarse.setAutoDefault(False)
         self.link_registrarse.setDefault(False)
         self.link_registrarse.setObjectName("link_registrarse")
+        self.foto_ojo = QtWidgets.QLabel(self)
+        self.foto_ojo.setGeometry(QtCore.QRect(730, 528, 26, 26))
+        foto_ojo = QtGui.QImage(self.RUTA_OJO)
+        if foto_ojo.isNull():
+            print("Error al cargar la imagen")
+        else:
+            self.foto_ojo.setPixmap(QtGui.QPixmap.fromImage(foto_ojo))
+
         self.fondo_negro.raise_()
         self.print_nickname.raise_()
         self.print_password.raise_()
         self.input_nickname.raise_()
         self.input_password.raise_()
+        self.foto_ojo.raise_()
         self.setCentralWidget(self.ventana)
 
         self.retranslateUi()
@@ -96,6 +106,7 @@ class MenuLogin(QMainWindow):
 
         self.link_registrarse.clicked.connect(self.abrir_registrarse)
         self.boton_iniciar_sesion.clicked.connect(self.comprobar_datos)
+        self.foto_ojo.mousePressEvent = self.visualizar_contrasenia
         self.show()
 
     def retranslateUi(self):
@@ -106,6 +117,7 @@ class MenuLogin(QMainWindow):
         self.boton_iniciar_sesion.setText(_translate("self", "INICIAR SESIÓN"))
         self.print_iniciar_sesion.setText(_translate("self", "INICIAR SESIÓN"))
         self.link_registrarse.setText(_translate("self", "Registrate"))
+        self.foto_ojo.setText(_translate("self", ""))
 
     def cargar_ficheros_en_app(self):
         self.almacen_usuarios.importar_usuarios()
@@ -120,6 +132,12 @@ class MenuLogin(QMainWindow):
     def keyPressEvent(self, event):
         if event.key() == QtCore.Qt.Key_Enter or event.key() == QtCore.Qt.Key_Return:
             self.boton_iniciar_sesion.clicked.emit()
+
+    def visualizar_contrasenia(self, event):
+        if self.input_password.echoMode() == QtWidgets.QLineEdit.Password:
+            self.input_password.setEchoMode(QtWidgets.QLineEdit.Normal)
+        else:
+            self.input_password.setEchoMode(QtWidgets.QLineEdit.Password)
 
     def recoger_campos_boton_iniciar_sesion(self): #LO IMPLEMENTAREMOS PARA RECOGER DATOS Y VALIDARLOS
         nickname_var = self.input_nickname.text()

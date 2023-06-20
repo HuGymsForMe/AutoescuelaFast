@@ -90,3 +90,7 @@ QLabel#print_footer{
 QFrame#frame_footer{
     background-color: rgb(9, 181, 203);
 }
+
+.marco_diagrama{
+    border: 4px solid rgb(9, 181, 203);
+}

@@ -113,6 +113,10 @@ class MiPerfil(QMainWindow):
         self.print_footer.setGeometry(QtCore.QRect(210, 30, 551, 41))
         self.print_footer.setObjectName("print_footer")
 
+        self.marco_diagrama_de_sectores = QtWidgets.QLabel(self.frame_scroll)
+        self.marco_diagrama_de_sectores.setGeometry(QtCore.QRect(166, 626, 529, 349))
+        self.marco_diagrama_de_sectores.setProperty("class", "marco_diagrama")
+
         self.apto, self.no_apto, self.test_realizados = self.almacen_partidas.crear_grafico_sectores(self.nickname_var)
         diagrama_de_sectores = Figure()
         canvas = FigureCanvas(diagrama_de_sectores)
@@ -124,12 +128,18 @@ class MiPerfil(QMainWindow):
             data = [self.apto, self.no_apto]
         labels = ['APTO', 'NO APTO']
         colors = ['#99ff99', '#ff9999']
-        plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%')
+        pie = plt.pie(data, labels=labels, colors=colors, autopct='%1.1f%%')
+        for label in pie[1]:
+            label.set_fontsize(18) #TAMAÑO DE FUENTE APTO // NO APTO
         pixmap = canvas.grab().scaledToWidth(521) #ANCHO DIAGRAMA
         self.diagrama_de_sectores = QtWidgets.QLabel(self.frame_scroll)
         self.diagrama_de_sectores.setPixmap(pixmap)
         self.diagrama_de_sectores.setGeometry(QtCore.QRect(170, 630, 521, 341))
         self.diagrama_de_sectores.setObjectName("diagrama_de_sectores")
+
+        self.marco_diagrama_de_barras = QtWidgets.QLabel(self.frame_scroll)
+        self.marco_diagrama_de_barras.setGeometry(QtCore.QRect(166, 1086, 529, 349))
+        self.marco_diagrama_de_barras.setProperty("class", "marco_diagrama")
 
         categorias, valores = self.almacen_partidas.crear_grafico_barras(self.nickname_var)
         diagrama_de_barras = Figure()
@@ -137,6 +147,7 @@ class MiPerfil(QMainWindow):
         plt = diagrama_de_barras.add_subplot(111)
         plt.bar(categorias, valores)
         pixmap = canvas.grab().scaledToWidth(521) #ANCHO DIAGRAMA
+
         self.diagrama_de_barras = QtWidgets.QLabel(self.frame_scroll)
         self.diagrama_de_barras.setPixmap(pixmap)
         self.diagrama_de_barras.setGeometry(QtCore.QRect(170, 1090, 521, 341))
@@ -171,6 +182,9 @@ class MiPerfil(QMainWindow):
         self.title_mis_stats.setText(_translate("self", "MIS ESTADÍSTICAS"))
         self.print_test_realizados.setText(_translate("self", "TEST REALIZADOS: "))
         self.num_test_realizados.setText(_translate("self", f"{self.test_realizados}"))
+
+        self.marco_diagrama_de_sectores.setText(_translate("self", ""))
+
         self.diagrama_de_sectores.setText(_translate("self", ""))
         self.title_ultimos_test.setText(_translate("self", "ÚLTIMOS TEST REALIZADOS"))
         self.diagrama_de_barras.setText(_translate("self", ""))
