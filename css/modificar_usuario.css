@@ -1,0 +1,34 @@
+.fondo_pantalla{
+    background-color: rgb(56, 56, 56);
+}
+
+QLineEdit{
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+.print_campos{
+    color: rgb(9, 181, 203);
+    font: 12pt "MS Shell Dlg 2";
+}
+
+.title_modificar{
+    font: 22pt "MS Shell Dlg 2";
+    color: rgb(9, 181, 203);
+}
+
+.botones_mod{
+    background-color: #09B5CB;
+    border-radius: 4px;
+    color: #FFFFFF;
+    font: 10pt "MS Shell Dlg 2";
+}
+
+.botones_mod:hover{
+    background-color: #037e8f;
+}
+
+.botones_mod:pressed{
+    background-color: #036666;
+    border: 1.5px solid rgba(255, 255, 255, 0.5);
+}

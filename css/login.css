@@ -1,15 +1,11 @@
-QLabel#print_nickname{
-    color: #09B5CB;
-    font-size: 12pt;
-}
-
-QLabel#print_password{
+QLabel#print_nickname, QLabel#print_password{
     color: #09B5CB;
     font-size: 12pt;
 }
 
 QLineEdit#input_nickname, QLineEdit#input_password{
     font-size: 16px;
+    border-radius: 4px;
 }
 
 QFrame#fondo_negro{

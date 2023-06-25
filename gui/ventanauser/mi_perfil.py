@@ -18,6 +18,7 @@ class MiPerfil(QMainWindow):
         self.RUTA_CSS = os.path.abspath('./css/mi_perfil.css')
         
         #DATOS USUARIOS
+        self.password = None
         self.nombre = None
         self.gmail = None
         self.apellidos = None
@@ -25,7 +26,6 @@ class MiPerfil(QMainWindow):
         self.setupUi()
 
     def setupUi(self):
-        self.setObjectName("self")
         self.resize(904, 643)
         self.setMinimumSize(QtCore.QSize(904, 643))
         self.setMaximumSize(QtCore.QSize(904, 643))
@@ -35,19 +35,14 @@ class MiPerfil(QMainWindow):
         self.favicon = QIcon('./img/coche.png')
         self.setWindowIcon(self.favicon)
         self.centralwidget = QtWidgets.QWidget(self)
-        self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
-        self.verticalLayout.setObjectName("verticalLayout")
         self.ventana_scroll = QtWidgets.QScrollArea(self.centralwidget)
         self.ventana_scroll.setStyleSheet("")
         self.ventana_scroll.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.ventana_scroll.setWidgetResizable(True)
-        self.ventana_scroll.setObjectName("ventana_scroll")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
         self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 868, 2022))
-        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.frame_scroll = QtWidgets.QFrame(self.scrollAreaWidgetContents)
         self.frame_scroll.setMinimumSize(QtCore.QSize(800, 1650))
         self.frame_scroll.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -58,43 +53,31 @@ class MiPerfil(QMainWindow):
         self.title_mis_datos.setObjectName("title_mis_datos")
         self.print_nickname = QtWidgets.QLabel(self.frame_scroll)
         self.print_nickname.setGeometry(QtCore.QRect(150, 100, 221, 61))
-        self.print_nickname.setObjectName("print_nickname")
         self.print_nombre = QtWidgets.QLabel(self.frame_scroll)
         self.print_nombre.setGeometry(QtCore.QRect(150, 170, 201, 61))
-        self.print_nombre.setObjectName("print_nombre")
         self.print_apellidos = QtWidgets.QLabel(self.frame_scroll)
         self.print_apellidos.setGeometry(QtCore.QRect(150, 240, 201, 61))
-        self.print_apellidos.setObjectName("print_apellidos")
         self.print_fecha_inicio = QtWidgets.QLabel(self.frame_scroll)
         self.print_fecha_inicio.setGeometry(QtCore.QRect(150, 310, 201, 61))
-        self.print_fecha_inicio.setObjectName("print_fecha_inicio")
         self.print_gmail = QtWidgets.QLabel(self.frame_scroll)
         self.print_gmail.setGeometry(QtCore.QRect(150, 380, 201, 61))
-        self.print_gmail.setObjectName("print_gmail")
         self.mi_nickname = QtWidgets.QLabel(self.frame_scroll)
         self.mi_nickname.setGeometry(QtCore.QRect(490, 100, 381, 61))
-        self.mi_nickname.setObjectName("mi_nickname")
         self.mi_nombre = QtWidgets.QLabel(self.frame_scroll)
         self.mi_nombre.setGeometry(QtCore.QRect(490, 170, 381, 61))
-        self.mi_nombre.setObjectName("mi_nombre")
         self.mis_apellidos = QtWidgets.QLabel(self.frame_scroll)
         self.mis_apellidos.setGeometry(QtCore.QRect(490, 240, 391, 61))
-        self.mis_apellidos.setObjectName("mis_apellidos")
         self.mi_fecha_de_ingreso = QtWidgets.QLabel(self.frame_scroll)
         self.mi_fecha_de_ingreso.setGeometry(QtCore.QRect(490, 310, 381, 61))
-        self.mi_fecha_de_ingreso.setObjectName("mi_fecha_de_ingreso")
         self.mi_gmail = QtWidgets.QLabel(self.frame_scroll)
         self.mi_gmail.setGeometry(QtCore.QRect(490, 380, 381, 61))
-        self.mi_gmail.setObjectName("mi_gmail")
         self.title_mis_stats = QtWidgets.QLabel(self.frame_scroll)
         self.title_mis_stats.setGeometry(QtCore.QRect(270, 480, 351, 71))
         self.title_mis_stats.setObjectName("title_mis_stats")
         self.linea_separacion = QtWidgets.QFrame(self.frame_scroll)
         self.linea_separacion.setGeometry(QtCore.QRect(-20, 440, 911, 20))
-        self.linea_separacion.setStyleSheet("")
         self.linea_separacion.setFrameShape(QtWidgets.QFrame.HLine)
         self.linea_separacion.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.linea_separacion.setObjectName("linea_separacion")
         self.print_test_realizados = QtWidgets.QLabel(self.frame_scroll)
         self.print_test_realizados.setGeometry(QtCore.QRect(290, 540, 251, 71))
         self.print_test_realizados.setObjectName("print_test_realizados")
@@ -144,7 +127,6 @@ class MiPerfil(QMainWindow):
         self.diagrama_de_sectores = QtWidgets.QLabel(self.frame_scroll)
         self.diagrama_de_sectores.setPixmap(pixmap)
         self.diagrama_de_sectores.setGeometry(QtCore.QRect(170, 660, 521, 341))
-        self.diagrama_de_sectores.setObjectName("diagrama_de_sectores")
 
         self.marco_diagrama_de_barras = QtWidgets.QLabel(self.frame_scroll)
         self.marco_diagrama_de_barras.setGeometry(QtCore.QRect(166, 1116, 529, 349))
@@ -160,7 +142,6 @@ class MiPerfil(QMainWindow):
         self.diagrama_de_barras = QtWidgets.QLabel(self.frame_scroll)
         self.diagrama_de_barras.setPixmap(pixmap)
         self.diagrama_de_barras.setGeometry(QtCore.QRect(170, 1120, 521, 341))
-        self.diagrama_de_barras.setObjectName("diagrama_de_barras")
 
         self.verticalLayout_2.addWidget(self.frame_scroll)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -202,7 +183,7 @@ class MiPerfil(QMainWindow):
         self.print_footer.setText(_translate("self", "©  2023AutoescuelaFastApp. Todos los derechos reservados.  "))
 
     def recoger_datos_personales(self):
-        self.nombre, self.gmail, self.apellidos, self.fecha_ingreso = self.almacen_usuarios.encontrar_usuario_para_mostrar_datos(self.nickname_var)
+        self.nombre, self.password, self.gmail, self.apellidos, self.fecha_ingreso = self.almacen_usuarios.encontrar_usuario_para_mostrar_datos(self.nickname_var)
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)
     def closeEvent(self, event):

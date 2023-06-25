@@ -1,4 +1,5 @@
 import os
+import winsound
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMainWindow
@@ -22,10 +23,10 @@ class RealizarTest(QMainWindow):
         self.almacen_partidas = almacen_partidas
         self.nickname_var = nickname_var
         self.RUTA_CSS = os.path.abspath('./css/realizar_test.css')
+        self.RUTA_SONIDO = os.path.abspath('./sounds/boton.wav')
         self.setupUi()
 
     def setupUi(self):
-        self.setObjectName("self")
         self.resize(1017, 705)
         self.setMinimumSize(QtCore.QSize(1017, 705))
         self.setMaximumSize(QtCore.QSize(1017, 705))
@@ -38,43 +39,33 @@ class RealizarTest(QMainWindow):
         self.boton_test_1 = QtWidgets.QPushButton(self)
         self.boton_test_1.setGeometry(QtCore.QRect(60, 150, 431, 71))
         self.boton_test_1.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_test_1.setObjectName("boton_test_1")
         self.boton_test_2 = QtWidgets.QPushButton(self)
         self.boton_test_2.setGeometry(QtCore.QRect(60, 260, 431, 71))
         self.boton_test_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_test_2.setObjectName("boton_test_2")
         self.boton_test_3 = QtWidgets.QPushButton(self)
         self.boton_test_3.setGeometry(QtCore.QRect(60, 370, 431, 71))
         self.boton_test_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_test_3.setObjectName("boton_test_3")
         self.boton_test_4 = QtWidgets.QPushButton(self)
         self.boton_test_4.setGeometry(QtCore.QRect(60, 480, 431, 71))
         self.boton_test_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_test_4.setObjectName("boton_test_4")
         self.boton_test_5 = QtWidgets.QPushButton(self)
         self.boton_test_5.setGeometry(QtCore.QRect(60, 590, 431, 71))
         self.boton_test_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_test_5.setObjectName("boton_test_5")
         self.boton_test_6 = QtWidgets.QPushButton(self)
         self.boton_test_6.setGeometry(QtCore.QRect(520, 150, 431, 71))
         self.boton_test_6.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_test_6.setObjectName("boton_test_6")
         self.boton_test_7 = QtWidgets.QPushButton(self)
         self.boton_test_7.setGeometry(QtCore.QRect(520, 260, 431, 71))
         self.boton_test_7.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_test_7.setObjectName("boton_test_7")
         self.boton_test_8 = QtWidgets.QPushButton(self)
         self.boton_test_8.setGeometry(QtCore.QRect(520, 370, 431, 71))
         self.boton_test_8.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_test_8.setObjectName("boton_test_8")
         self.boton_test_9 = QtWidgets.QPushButton(self)
         self.boton_test_9.setGeometry(QtCore.QRect(520, 480, 431, 71))
         self.boton_test_9.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_test_9.setObjectName("boton_test_9")
         self.boton_test_10 = QtWidgets.QPushButton(self)
         self.boton_test_10.setGeometry(QtCore.QRect(520, 590, 431, 71))
         self.boton_test_10.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.boton_test_10.setObjectName("boton_test_10")
         self.fondo_test = QtWidgets.QFrame(self)
         self.fondo_test.setGeometry(QtCore.QRect(-11, -11, 1041, 741))
         self.fondo_test.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -126,44 +117,48 @@ class RealizarTest(QMainWindow):
         self.boton_test_9.setText(_translate("self", "TEST 9"))
         self.print_pregunta.setText(_translate("self", "¿QUÉ TEST DESEAS REALIZAR?"))
 
-    def abrir_test_1(self):
+    def ocultar_realizar_test(self):
         self.hide()
+        winsound.PlaySound(self.RUTA_SONIDO, winsound.SND_FILENAME)
+
+    def abrir_test_1(self):
+        self.ocultar_realizar_test()
         self.ventana_test_1 = Test1(self, self.almacen_partidas, self.nickname_var)
 
     def abrir_test_2(self):
-        self.hide()
+        self.ocultar_realizar_test()
         self.ventana_test_2 = Test2(self, self.almacen_partidas, self.nickname_var)
 
     def abrir_test_3(self):
-        self.hide()
+        self.ocultar_realizar_test()
         self.ventana_test_3 = Test3(self, self.almacen_partidas, self.nickname_var)
 
     def abrir_test_4(self):
-        self.hide()
+        self.ocultar_realizar_test()
         self.ventana_test_4 = Test4(self, self.almacen_partidas, self.nickname_var)
 
     def abrir_test_5(self):
-        self.hide()
+        self.ocultar_realizar_test()
         self.ventana_test_5 = Test5(self, self.almacen_partidas, self.nickname_var)
 
     def abrir_test_6(self):
-        self.hide()
+        self.ocultar_realizar_test()
         self.ventana_test_6 = Test6(self, self.almacen_partidas, self.nickname_var)
 
     def abrir_test_7(self):
-        self.hide()
+        self.ocultar_realizar_test()
         self.ventana_test_7 = Test7(self, self.almacen_partidas, self.nickname_var)
 
     def abrir_test_8(self):
-        self.hide()
+        self.ocultar_realizar_test()
         self.ventana_test_8 = Test8(self, self.almacen_partidas, self.nickname_var)
 
     def abrir_test_9(self):
-        self.hide()
+        self.ocultar_realizar_test()
         self.ventana_test_9 = Test9(self, self.almacen_partidas, self.nickname_var)
 
     def abrir_test_10(self):
-        self.hide()
+        self.ocultar_realizar_test()
         self.ventana_test_10 = Test10(self, self.almacen_partidas, self.nickname_var)
 
     @QtCore.pyqtSlot(QtGui.QCloseEvent)

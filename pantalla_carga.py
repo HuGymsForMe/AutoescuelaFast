@@ -15,7 +15,6 @@ class PantallaDeCarga(QMainWindow):
         self.setupUi()
 
     def setupUi(self):
-        self.setObjectName("self")
         self.resize(800, 448)
         self.setMinimumSize(QtCore.QSize(800, 448))
         self.setMaximumSize(QtCore.QSize(800, 480))
@@ -25,11 +24,9 @@ class PantallaDeCarga(QMainWindow):
         self.favicon = QIcon('img/coche.png')
         self.setWindowIcon(self.favicon)
         self.centralwidget = QtWidgets.QWidget(self)
-        self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout.setSpacing(0)
-        self.horizontalLayout.setObjectName("horizontalLayout")
         self.frame_pantalla_carga = QtWidgets.QFrame(self.centralwidget)
         self.frame_pantalla_carga.setInputMethodHints(QtCore.Qt.ImhNone)
         self.frame_pantalla_carga.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -43,13 +40,11 @@ class PantallaDeCarga(QMainWindow):
         self.barra_de_progreso.setTextVisible(False)
         self.barra_de_progreso.setOrientation(QtCore.Qt.Horizontal)
         self.barra_de_progreso.setTextDirection(QtWidgets.QProgressBar.TopToBottom)
-        self.barra_de_progreso.setObjectName("barra_de_progreso")
         self.print_cargando = QtWidgets.QLabel(self.frame_pantalla_carga)
         self.print_cargando.setGeometry(QtCore.QRect(360, 390, 141, 31))
         self.print_cargando.setObjectName("print_cargando")
         self.foto_coche = QtWidgets.QLabel(self.frame_pantalla_carga)
         self.foto_coche.setGeometry(QtCore.QRect(150, 60, 400, 211))
-        self.foto_coche.setObjectName("foto_coche")
         imagen_coche = QtGui.QImage(self.RUTA_FOTO)
         if imagen_coche.isNull():
             print("Error al cargar la imagen")

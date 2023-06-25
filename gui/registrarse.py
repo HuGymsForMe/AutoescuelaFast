@@ -1,5 +1,6 @@
 import datetime
 import os
+import winsound
 
 from PyQt5.QtCore import QTimer
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -17,10 +18,10 @@ class Registrarse(QMainWindow):
         self.RUTA_COCHE = os.path.abspath('./img/logofast.png')
         self.RUTA_OJO = os.path.abspath('./img/ojopassword.png')
         self.RUTA_CSS = os.path.abspath('./css/registrarse.css')
+        self.RUTA_SONIDO = os.path.abspath('./sounds/boton.wav')
         self.setupUi()
 
     def setupUi(self):
-        self.setObjectName("self")
         self.resize(1102, 752)
         self.setMinimumSize(QtCore.QSize(1102, 752))
         self.setMaximumSize(QtCore.QSize(1102, 752))
@@ -47,21 +48,16 @@ class Registrarse(QMainWindow):
         self.print_apellidos.setProperty("class", "print_campos")
         self.input_nickname = QtWidgets.QLineEdit(self)
         self.input_nickname.setGeometry(QtCore.QRect(130, 230, 291, 41))
-        self.input_nickname.setObjectName("input_nickname")
         self.input_password = QtWidgets.QLineEdit(self)
         self.input_password.setGeometry(QtCore.QRect(130, 330, 291, 41))
         self.input_password.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.input_password.setObjectName("input_password")
         self.input_gmail = QtWidgets.QLineEdit(self)
         self.input_gmail.setGeometry(QtCore.QRect(470, 230, 291, 41))
-        self.input_gmail.setObjectName("input_gmail")
         self.input_confirm_password = QtWidgets.QLineEdit(self)
         self.input_confirm_password.setGeometry(QtCore.QRect(130, 440, 291, 41))
         self.input_confirm_password.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.input_confirm_password.setObjectName("input_confirm_password")
         self.input_nombre = QtWidgets.QLineEdit(self)
         self.input_nombre.setGeometry(QtCore.QRect(470, 330, 291, 41))
-        self.input_nombre.setObjectName("input_nombre")
         self.foto_coche = QtWidgets.QLabel(self)
         imagen_coche = QtGui.QImage(self.RUTA_COCHE)
         if imagen_coche.isNull():
@@ -87,7 +83,6 @@ class Registrarse(QMainWindow):
         self.print_correo_electronico.setProperty("class", "print_campos")
         self.input_apellidos = QtWidgets.QLineEdit(self)
         self.input_apellidos.setGeometry(QtCore.QRect(470, 440, 291, 41))
-        self.input_apellidos.setObjectName("input_apellidos")
         self.frame = QtWidgets.QFrame(self)
         self.frame.setGeometry(QtCore.QRect(-11, -21, 1181, 811))
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -194,6 +189,7 @@ class Registrarse(QMainWindow):
         return nickname_var, password_var, confirm_password_var, gmail_var, name_var, apellidos_var
 
     def comprobar_registro(self):
+        winsound.PlaySound(self.RUTA_SONIDO, winsound.SND_FILENAME)
         nickname_var, password_var, confirm_password_var, gmail_var, name_var, apellidos_var = self.recoger_datos_registro()
         if (nickname_var == '' or password_var == '' or confirm_password_var == '' 
         or gmail_var == '' or name_var == '' or apellidos_var == ''):
@@ -201,7 +197,7 @@ class Registrarse(QMainWindow):
         elif len(nickname_var) > 20 or len(nickname_var) < 6:
             QMessageBox.warning(self, "Nombre de usuario incorrecto", "El nombre de usuario debe de tener entre 6 y 20 caracteres")
         elif self.validador.validar_contrasenia(password_var) or self.validador.validar_contrasenia(confirm_password_var):
-            QMessageBox.warning(self, "Contraseña incorrecta", "La cadena tiene que contener al menos \n  8 dígitos tanto letras como dígitos")
+            QMessageBox.warning(self, "Contraseña incorrecta", "La cadena tiene que contener al menos \n  8 caracteres tanto letras como dígitos")
         elif password_var != confirm_password_var:
             QMessageBox.warning(self, "Error", "No coinciden las contraseñas")
         else:

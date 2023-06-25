@@ -125,6 +125,18 @@ class AlmacenPartidas:
     @staticmethod
     def convertir_a_str(minutos, segundos):
         return "{:02d}:{:02d}".format(minutos, segundos)
+     
+    def borrar_partidas_de_un_usuario(self, nombre_usuario):
+        for index in range(len(self._partidas)-1, -1, -1):
+            if nombre_usuario == self._partidas[index]._nickname:
+                del self._partidas[index]
+        self.sobreescribir_partidas()
 
+    def sobreescribir_partidas(self):
+        with open(os.path.join(self.RUTA_FICHEROS, 'partidas.csv'), 'w', encoding='UTF-8') as fichero_partidas:
+            for partida in self._partidas:
+                fichero_partidas.write(f"{str(partida)}\n")
+
+    #SEGUIR MAÑANA
 
         

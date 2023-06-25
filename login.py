@@ -26,7 +26,6 @@ class MenuLogin(QMainWindow):
         self.almacen_partidas = AlmacenPartidas()
         self.cargar_ficheros_en_app()
 
-        self.setObjectName("Login")
         self.resize(1050, 747)
         self.setMinimumSize(QtCore.QSize(1050, 747))
         self.setMaximumSize(QtCore.QSize(1050, 747))

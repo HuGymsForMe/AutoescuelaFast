@@ -57,12 +57,32 @@ class AlmacenUsuarios:
                 datos = linea.split(';')
                 nickname = datos[self.CamposFicheroUsuario.NICKNAME].strip()
                 if nickname == nombre_usuario:
+                    password = datos[self.CamposFicheroUsuario.PASSWORD].strip()
                     nombre = datos[self.CamposFicheroUsuario.NOMBRE].strip()
                     gmail = datos[self.CamposFicheroUsuario.GMAIL].strip()
                     apellidos = datos[self.CamposFicheroUsuario.APELLIDOS].strip()
                     fecha_ingreso = datos[self.CamposFicheroUsuario.FECHA_INGRESO].strip()
-                    return nombre, gmail, apellidos, fecha_ingreso
-            
+                    return nombre, password, gmail, apellidos, fecha_ingreso
+                
+    def borrar_usuario_para_modificacion(self, nombre_usuario):
+        pass
+
+    def del_usuario(self, nombre_usuario):
+        try:
+            with open(os.path.join(self.RUTA_FICHEROS, 'usuarios.csv'), 'r', encoding="UTF-8") as fichero_usuarios:
+                lineas = fichero_usuarios.readlines()
+                contador = 0
+                for linea in lineas:
+                    campos = str(linea).split(';')
+                    campo_dato_borrar_usuario = str(campos[self.CamposFicheroUsuario.NICKNAME].strip())
+                    if nombre_usuario == campo_dato_borrar_usuario:
+                        self._usuarios.pop(contador)
+                        return True
+                    contador += 1
+                return False
+        except IndexError:
+            pass
+
     def sobreescribir_ficheros(self):
         with open(os.path.join(self.RUTA_FICHEROS, 'usuarios.csv'), 'w', encoding='UTF-8') as fichero_usuarios:
             for usuario in self._usuarios:

@@ -12,7 +12,6 @@ class AcercaDe(QMainWindow):
         self.setupUi()
 
     def setupUi(self):
-        self.setObjectName("self")
         self.resize(794, 613)
         self.setMinimumSize(QtCore.QSize(794, 613))
         self.setMaximumSize(QtCore.QSize(794, 613))
@@ -30,7 +29,6 @@ class AcercaDe(QMainWindow):
         self.print_title.setObjectName("print_title")
         self.frame_footer = QtWidgets.QFrame(self)
         self.frame_footer.setGeometry(QtCore.QRect(0, 490, 811, 131))
-        self.frame_footer.setStyleSheet("background-color: #09B5CB;")
         self.frame_footer.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_footer.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_footer.setObjectName("frame_footer")
