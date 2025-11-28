@@ -1,10 +1,10 @@
 <div align="center">
-    <img src="./img/logofast.png" alt="Logo Autoescuela Fast" heigth="50px" width="auto" />
+    <img src="./img/logofast.png" alt="Logo Autoescuela Fast" heigth="30px" width="auto" />
     <h1>Bienvenidos a Autoescuela Fast</h1>
 </div>
 
 <div align="center">
-    <img src="./img/acierto.png" alt="Logo Autoescuela Fast" heigth="100px" width="auto" />
+    <img src="./img/acierto.png" alt="Logo Autoescuela Fast" heigth="auto" width="70%" />
 </div>
 
 **Test de autoescuela en la palma de tu mano.**
@@ -17,7 +17,7 @@ Autoescuela Fast es una aplicación diseñada para ayudarte a prepararte para el
 - 📊 Consulta tus estadísticas y progresos en tiempo real.
 
 <div align="center">
-    <img src="./img/img_datos.png" alt="Logo Autoescuela Fast" heigth="100px" width="auto" />
+    <img src="./img/img_datos.png" alt="Logo Autoescuela Fast" heigth="auto" width="70%" />
 </div>
 
 ## 💻 Tecnologías utilizadas
