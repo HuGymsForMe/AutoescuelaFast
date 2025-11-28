@@ -13,6 +13,11 @@ Autoescuela Fast es una aplicación diseñada para ayudarte a prepararte para el
 - 📊 Consulta tus estadísticas y progresos en tiempo real.
 - 🏆 Desbloquea logros a medida que mejoras tus resultados.
 
+## 💻 Tecnologías utilizadas
+- 🐍 Python v.3.10
+- 🖥️ PyQT (Para construir las interfaces)
+- 🎨 CSS (Para los estilos)
+
 ## 🌐 Versión web del proyecto
 También puedes acceder al repositorio en su versión web aquí (este desarrollo fue la idea inicial para realizar la versión web para el Trabajo final de 2 año):
 
