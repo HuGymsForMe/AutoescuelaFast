@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./img/logofast.png" alt="Logo Autoescuela Fast" width="40%" />
+    <img src="./img/logofast.png" alt="Logo Autoescuela Fast" width="35%" />
     <h1>Bienvenidos a Autoescuela Fast</h1>
 </div>
 
